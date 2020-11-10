@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let viewModel = LoginScreenImpl()
-        let vc = LoginScreen(viewModel: viewModel)
+//        let vc = LoginScreen(viewModel: viewModel)
+        let vc = LoginScreen()
         let navigation = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
