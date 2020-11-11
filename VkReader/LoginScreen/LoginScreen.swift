@@ -14,7 +14,7 @@ class LoginScreen: UIViewController {
     
     init(viewModel: LoginScreenViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: String(describing: LoginScreenViewModel.self), bundle: nil)
+        super.init(nibName: String(describing: LoginScreen.self), bundle: nil)
     }
     
     required init?(coder: NSCoder) {

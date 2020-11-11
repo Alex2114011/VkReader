@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
 		FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4DE255ADE3B00E373FE /* Assets.xcassets */; };
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleNetworkRequest.swift; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACEF4DE255ADE3B00E373FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				FACEF4DE255ADE3B00E373FE /* Assets.xcassets */,
 				FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */,
 				FACEF4E3255ADE3B00E373FE /* Info.plist */,
+				F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */,
 			);
 			path = VkReader;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FACEF4EF255ADEB800E373FE /* LoginScreen.swift in Sources */,
+				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginScreenViewModel.swift in Sources */,
 				FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */,
 			);
