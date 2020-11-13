@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */; };
+		F5AD1BDB255EB72D005BD999 /* OAuthWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */; };
+		F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */; };
+		F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE1255EC37F005BD999 /* CoreAssembly.swift */; };
+		F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */; };
+		F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE7255EC3E3005BD999 /* BaseController.swift */; };
+		F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */; };
+		F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BEE255EC716005BD999 /* String+Extensions.swift */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
 		FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4DE255ADE3B00E373FE /* Assets.xcassets */; };
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
@@ -19,6 +26,13 @@
 
 /* Begin PBXFileReference section */
 		F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleNetworkRequest.swift; sourceTree = "<group>"; };
+		F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthWebViewViewController.swift; sourceTree = "<group>"; };
+		F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewModel.swift; sourceTree = "<group>"; };
+		F5AD1BE1255EC37F005BD999 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
+		F5AD1BE7255EC3E3005BD999 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstants.swift; sourceTree = "<group>"; };
+		F5AD1BEE255EC716005BD999 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACEF4DE255ADE3B00E373FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +55,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5AD1BD9255EB715005BD999 /* OAuthWebView */ = {
+			isa = PBXGroup;
+			children = (
+				F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */,
+				F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */,
+			);
+			path = OAuthWebView;
+			sourceTree = "<group>";
+		};
+		F5AD1BED255EC70A005BD999 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5AD1BEE255EC716005BD999 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5AD1BF2255EC764005BD999 /* Infrastucture */ = {
+			isa = PBXGroup;
+			children = (
+				F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */,
+				F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */,
+				F5AD1BE7255EC3E3005BD999 /* BaseController.swift */,
+			);
+			path = Infrastucture;
+			sourceTree = "<group>";
+		};
+		F5AD1BF3255EC781005BD999 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F5AD1BD9255EB715005BD999 /* OAuthWebView */,
+				FACEF4FE255ADFC800E373FE /* LoginScreen */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F5B4CE9E255EC85000B5D6BD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F5AD1BE1255EC37F005BD999 /* CoreAssembly.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F5B4CE9F255EC85300B5D6BD /* Netwotk */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Netwotk;
+			sourceTree = "<group>";
+		};
 		FACEF4C9255ADE3A00E373FE = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +125,13 @@
 		FACEF4D4255ADE3A00E373FE /* VkReader */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4CE9F255EC85300B5D6BD /* Netwotk */,
+				F5B4CE9E255EC85000B5D6BD /* Core */,
+				F5AD1BF3255EC781005BD999 /* UIComponents */,
+				F5AD1BF2255EC764005BD999 /* Infrastucture */,
+				F5AD1BED255EC70A005BD999 /* Extensions */,
 				FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */,
 				FACEF4F6255ADEEF00E373FE /* DataModel.swift */,
-				FACEF4FE255ADFC800E373FE /* LoginScreen */,
 				FACEF4DE255ADE3B00E373FE /* Assets.xcassets */,
 				FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */,
 				FACEF4E3255ADE3B00E373FE /* Info.plist */,
@@ -153,9 +222,16 @@
 			files = (
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FACEF4EF255ADEB800E373FE /* LoginScreen.swift in Sources */,
+				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
+				F5AD1BDB255EB72D005BD999 /* OAuthWebViewViewController.swift in Sources */,
+				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
+				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
+				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginScreenViewModel.swift in Sources */,
+				F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */,
 				FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */,
+				F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

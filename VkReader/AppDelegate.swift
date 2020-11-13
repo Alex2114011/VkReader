@@ -11,18 +11,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    let network = FirstExampleNetworkRequest()
+    var coreAssembly = CoreAssembly()
+    lazy var presentationAssembly = coreAssembly.presentationAssembly
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let viewModel = LoginScreenImpl()
-        let vc = LoginScreen(viewModel: viewModel)
-        let navigation = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navigation
+        if let token = coreAssembly.credentialsStorage.get(key: kToken) {
+            print("Авторизованы уже, вот токен \(token)")
+        } else {
+            let navigation = UINavigationController(rootViewController: presentationAssembly.loginViewController())
+            window?.rootViewController = navigation
+        }
         window?.makeKeyAndVisible()
-        network.makeRequest()
-        network.makePost()
         return true
     }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginScreen: UIViewController {
+class LoginScreen: BaseController {
 
     
     var viewModel: LoginScreenViewModel
@@ -24,12 +24,12 @@ class LoginScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
-
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let core = corePresentation else { return }
+        self.present(core.oauthViewController(), animated: true, completion: nil)
+    }
     
-
- 
 }
