@@ -15,6 +15,10 @@
 		F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE7255EC3E3005BD999 /* BaseController.swift */; };
 		F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */; };
 		F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BEE255EC716005BD999 /* String+Extensions.swift */; };
+		F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */; };
+		F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */; };
+		F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */; };
+		F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
 		FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4DE255ADE3B00E373FE /* Assets.xcassets */; };
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
@@ -33,6 +37,10 @@
 		F5AD1BE7255EC3E3005BD999 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstants.swift; sourceTree = "<group>"; };
 		F5AD1BEE255EC716005BD999 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
+		F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResult.swift; sourceTree = "<group>"; };
+		F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACEF4DE255ADE3B00E373FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +110,10 @@
 		F5B4CE9F255EC85300B5D6BD /* Netwotk */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */,
+				F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */,
+				F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */,
+				F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */,
 			);
 			path = Netwotk;
 			sourceTree = "<group>";
@@ -222,8 +234,11 @@
 			files = (
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FACEF4EF255ADEB800E373FE /* LoginScreen.swift in Sources */,
+				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
+				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewViewController.swift in Sources */,
+				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
@@ -232,6 +247,7 @@
 				F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */,
 				FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */,
 				F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */,
+				F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

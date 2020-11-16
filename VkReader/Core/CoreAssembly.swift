@@ -12,7 +12,8 @@ class CoreAssembly {
     lazy var presentationAssembly: CorePresentationAssembly = CorePresentationAssembly(assembly: self)
     
     lazy var credentialsStorage = CredentialsStorage()
-    
+    lazy var hostProvider = HostProviderImpl()
+    lazy var baseNetworkingService = BaseNetworkServiceImpl(hostProvider: hostProvider)
 }
 
 class CorePresentationAssembly {
