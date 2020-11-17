@@ -37,5 +37,13 @@ class CorePresentationAssembly {
         vc.corePresentation = self
         return vc
     }
-    
+   
+    func feedViewController() -> UIViewController {
+        
+        let vm = FeedScreenImpl()
+        let vc = FeedScreen(viewModel: vm)
+        vc.corePresentation = self
+        vc.modalPresentationStyle = .fullScreen
+        return vc
+    }
 }

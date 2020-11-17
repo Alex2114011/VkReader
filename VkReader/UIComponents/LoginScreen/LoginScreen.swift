@@ -26,10 +26,8 @@ class LoginScreen: BaseController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func goToAuthorization(_ sender: UIButton) {
         guard let core = corePresentation else { return }
         self.present(core.oauthViewController(), animated: true, completion: nil)
     }
-    
 }

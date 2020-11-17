@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coreAssembly.credentialsStorage.remove(by: kToken)
         if let token = coreAssembly.credentialsStorage.get(key: kToken) {
             print("Авторизованы уже, вот токен \(token)")
+            let navigation = UINavigationController(rootViewController: presentationAssembly.feedViewController())
+            window?.rootViewController = navigation
         } else {
             let navigation = UINavigationController(rootViewController: presentationAssembly.loginViewController())
             window?.rootViewController = navigation

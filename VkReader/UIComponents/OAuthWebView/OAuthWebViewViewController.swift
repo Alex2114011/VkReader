@@ -49,7 +49,7 @@ extension OAuthWebViewViewController: WKNavigationDelegate {
             if let token = navigationAction.request.url!.absoluteString.slice(from: "access_token=", to: "&") {
                 decisionHandler(.cancel)
                 viewModel.saveToken(with: token)
-                self.dismiss(animated: true, completion: nil)
+                self.present((corePresentation?.feedViewController())!, animated: true, completion: nil)
                 return
             }
         }

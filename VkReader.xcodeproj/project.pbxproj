@@ -27,6 +27,9 @@
 		FACEF4F0255ADEB800E373FE /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4EE255ADEB800E373FE /* LoginScreen.xib */; };
 		FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4F6255ADEEF00E373FE /* DataModel.swift */; };
 		FACEF4FB255ADFBC00E373FE /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4FA255ADFBC00E373FE /* LoginScreenViewModel.swift */; };
+		FAF332792563EDC0007B6F7F /* FeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF332772563EDC0007B6F7F /* FeedScreen.swift */; };
+		FAF3327A2563EDC0007B6F7F /* FeedScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF332782563EDC0007B6F7F /* FeedScreen.xib */; };
+		FAF3327D2563EDD9007B6F7F /* FeedScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3327C2563EDD9007B6F7F /* FeedScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		FACEF4EE255ADEB800E373FE /* LoginScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreen.xib; sourceTree = "<group>"; };
 		FACEF4F6255ADEEF00E373FE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FACEF4FA255ADFBC00E373FE /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
+		FAF332772563EDC0007B6F7F /* FeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreen.swift; sourceTree = "<group>"; };
+		FAF332782563EDC0007B6F7F /* FeedScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedScreen.xib; sourceTree = "<group>"; };
+		FAF3327C2563EDD9007B6F7F /* FeedScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		F5AD1BF3255EC781005BD999 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FAF332762563ED86007B6F7F /* FeedScreen */,
 				F5AD1BD9255EB715005BD999 /* OAuthWebView */,
 				FACEF4FE255ADFC800E373FE /* LoginScreen */,
 			);
@@ -165,6 +172,16 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		FAF332762563ED86007B6F7F /* FeedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAF332772563EDC0007B6F7F /* FeedScreen.swift */,
+				FAF3327C2563EDD9007B6F7F /* FeedScreenViewModel.swift */,
+				FAF332782563EDC0007B6F7F /* FeedScreen.xib */,
+			);
+			path = FeedScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,6 +242,7 @@
 				FACEF4F0255ADEB800E373FE /* LoginScreen.xib in Resources */,
 				FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */,
 				FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */,
+				FAF3327A2563EDC0007B6F7F /* FeedScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
+				FAF3327D2563EDD9007B6F7F /* FeedScreenViewModel.swift in Sources */,
+				FAF332792563EDC0007B6F7F /* FeedScreen.swift in Sources */,
 				FACEF4EF255ADEB800E373FE /* LoginScreen.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
