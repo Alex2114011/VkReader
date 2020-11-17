@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-//        WebCacheCleaner.clean()
+        WebCacheCleaner.clean()
         coreAssembly.credentialsStorage.remove(by: kToken)
         if let token = coreAssembly.credentialsStorage.get(key: kToken) {
             print("Авторизованы уже, вот токен \(token)")

@@ -41,10 +41,10 @@ class CorePresentationAssembly {
     func feedViewController() -> UIViewController {
         let vm = FeedViewModelImpl()
         let vc = FeedViewController(viewModel: vm)
-        let navigationController = UINavigationController(rootViewController: vc)
+//        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-        navigationController.modalPresentationStyle = .fullScreen
-        return navigationController
+//        navigationController.modalPresentationStyle = .fullScreen
+        return  vc//navigationController
     }
     
     func swapWindowRoot(to viewController: UIViewController) {
