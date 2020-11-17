@@ -40,4 +40,11 @@ class CredentialsStorage {
         }
     }
     
+    func remove(by key: String) {
+        let query = [
+            kSecClass as String       : kSecClassGenericPassword as String,
+            kSecAttrAccount as String : key]
+        SecItemDelete(query as CFDictionary)
+    }
+    
 }
