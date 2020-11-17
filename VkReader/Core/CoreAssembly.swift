@@ -49,9 +49,14 @@ class CorePresentationAssembly {
     
     func swapWindowRoot(to viewController: UIViewController) {
         if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            UIView.animate(withDuration: 0.2) {
-                window.rootViewController = viewController
-            }
+            
+            window.rootViewController = viewController
+            window.makeKeyAndVisible()
+            UIView.transition(with: window,
+                              duration: 0.2,
+                              options: .transitionCrossDissolve,
+                              animations: nil,
+                              completion: nil)
         }
     }
     
