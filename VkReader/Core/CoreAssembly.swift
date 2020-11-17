@@ -25,8 +25,8 @@ class CorePresentationAssembly {
     }
     
     func loginViewController() -> UIViewController {
-        let vm = LoginScreenImpl()
-        let vc = LoginScreen(viewModel: vm)
+        let vm = LoginViewModelImpl()
+        let vc = LoginViewController(viewModel: vm)
         vc.corePresentation = self
         return vc
     }
@@ -40,8 +40,8 @@ class CorePresentationAssembly {
    
     func feedViewController() -> UIViewController {
         
-        let vm = FeedScreenImpl()
-        let vc = FeedScreen(viewModel: vm)
+        let vm = FeedViewModelImpl()
+        let vc = FeedViewController(viewModel: vm)
         vc.corePresentation = self
         vc.modalPresentationStyle = .fullScreen
         return vc
