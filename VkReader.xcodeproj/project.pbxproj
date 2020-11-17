@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */; };
-		F5AD1BDB255EB72D005BD999 /* OAuthWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */; };
+		F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BDA255EB72D005BD999 /* OAuthWebViewController.swift */; };
 		F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */; };
 		F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE1255EC37F005BD999 /* CoreAssembly.swift */; };
 		F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		F5AD1BD6255C06CF005BD999 /* FirstExampleNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstExampleNetworkRequest.swift; sourceTree = "<group>"; };
-		F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthWebViewViewController.swift; sourceTree = "<group>"; };
+		F5AD1BDA255EB72D005BD999 /* OAuthWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthWebViewController.swift; sourceTree = "<group>"; };
 		F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewModel.swift; sourceTree = "<group>"; };
 		F5AD1BE1255EC37F005BD999 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		F5AD1BD9255EB715005BD999 /* OAuthWebView */ = {
 			isa = PBXGroup;
 			children = (
-				F5AD1BDA255EB72D005BD999 /* OAuthWebViewViewController.swift */,
+				F5AD1BDA255EB72D005BD999 /* OAuthWebViewController.swift */,
 				F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */,
 			);
 			path = OAuthWebView;
@@ -260,7 +260,7 @@
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
-				F5AD1BDB255EB72D005BD999 /* OAuthWebViewViewController.swift in Sources */,
+				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
@@ -412,6 +412,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VkReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VkReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

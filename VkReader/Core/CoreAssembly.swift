@@ -33,17 +33,26 @@ class CorePresentationAssembly {
     
     func oauthViewController() -> UIViewController {
         let viewModel = OAuthViewModelImpl(credentialsStorage: coreAssembly.credentialsStorage)
-        let vc = OAuthWebViewViewController(viewModel: viewModel)
+        let vc = OAuthWebViewController(viewModel: viewModel)
         vc.corePresentation = self
         return vc
     }
    
     func feedViewController() -> UIViewController {
-        
         let vm = FeedViewModelImpl()
         let vc = FeedViewController(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-        vc.modalPresentationStyle = .fullScreen
-        return vc
+        navigationController.modalPresentationStyle = .fullScreen
+        return navigationController
     }
+    
+    func swapWindowRoot(to viewController: UIViewController) {
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            UIView.animate(withDuration: 0.2) {
+                window.rootViewController = viewController
+            }
+        }
+    }
+    
 }
