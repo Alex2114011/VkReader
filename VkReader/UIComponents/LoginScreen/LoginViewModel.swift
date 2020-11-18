@@ -12,5 +12,5 @@ protocol LoginViewModel {
 }
 
 class LoginViewModelImpl: LoginViewModel{
-    
+    var test = "dss-"
 }

@@ -8,7 +8,7 @@
 import UIKit
 ///Основной ViewController от него должны наследоваться все остальные ViewControllerы 
 class BaseController: UIViewController {
-/// создаем слабую ссылку на класс CorePresentationAssembly нужно это для того, чтобы все созданные VC имели свойства и методы jgb
+/// создаем слабую ссылку на класс CorePresentationAssembly нужно это для того, чтобы все созданные VC имели свойства и методы класса
     weak var corePresentation: CorePresentationAssembly?
 
 }
