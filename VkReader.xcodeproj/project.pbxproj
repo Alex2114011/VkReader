@@ -22,6 +22,8 @@
 		F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */; };
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
+		FAAB00C6256525F2005D3032 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */; };
+		FAAB00C7256525F2005D3032 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
 		FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4DE255ADE3B00E373FE /* Assets.xcassets */; };
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
@@ -48,6 +50,8 @@
 		F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACEF4DE255ADE3B00E373FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 				FAF332A22564135E007B6F7F /* FeedViewController.swift */,
 				FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */,
 				FAF332A32564135E007B6F7F /* FeedViewController.xib */,
+				FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */,
+				FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */,
 			);
 			path = FeedScreen;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */,
 				FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */,
 				FAF332A52564135E007B6F7F /* FeedViewController.xib in Resources */,
+				FAAB00C7256525F2005D3032 /* FeedCollectionViewCell.xib in Resources */,
 				FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +262,7 @@
 			files = (
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */,
+				FAAB00C6256525F2005D3032 /* FeedCollectionViewCell.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
