@@ -5,7 +5,7 @@
 //  Created by p.grechikhin on 13.11.2020.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     
@@ -15,5 +15,14 @@ extension String {
                 String(self[substringFrom..<substringTo])
             }
         }
+    }
+    
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.12
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle], context: nil)
+
+        return ceil(boundingBox.height)
     }
 }

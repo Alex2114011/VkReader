@@ -13,7 +13,9 @@ class CoreAssembly {
     
     lazy var credentialsStorage = CredentialsStorage()
     lazy var hostProvider = HostProviderImpl()
+    lazy var urlProvider = URLProviderImpl()
     lazy var baseNetworkingService = BaseNetworkServiceImpl(hostProvider: hostProvider)
+    lazy var wallService: WallService = WallServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
 }
 
 class CorePresentationAssembly {
@@ -39,12 +41,12 @@ class CorePresentationAssembly {
     }
    
     func feedViewController() -> UIViewController {
-        let vm = FeedViewModelImpl()
+        let vm = FeedViewModelImpl(service: coreAssembly.wallService)
         let vc = FeedViewController(viewModel: vm)
-//        let navigationController = UINavigationController(rootViewController: vc)
+        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-//        navigationController.modalPresentationStyle = .fullScreen
-        return  vc//navigationController
+        navigationController.modalPresentationStyle = .fullScreen
+        return navigationController
     }
     
     func swapWindowRoot(to viewController: UIViewController) {

@@ -20,6 +20,18 @@
 		F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */; };
 		F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */; };
 		F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */; };
+		F5B4CEF32564C35200B5D6BD /* WallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEF22564C35200B5D6BD /* WallDTO.swift */; };
+		F5B4CEF72564C3C600B5D6BD /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEF62564C3C600B5D6BD /* WallService.swift */; };
+		F5B4CEFA2564C52800B5D6BD /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEF92564C52800B5D6BD /* URLProvider.swift */; };
+		F5B4CEFF2564C97000B5D6BD /* WallPostWithImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CEFD2564C97000B5D6BD /* WallPostWithImageCollectionCell.swift */; };
+		F5B4CF002564C97000B5D6BD /* WallPostWithImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B4CEFE2564C97000B5D6BD /* WallPostWithImageCollectionCell.xib */; };
+		F5B4CF042564C99E00B5D6BD /* WallPostCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF022564C99E00B5D6BD /* WallPostCollectionCell.swift */; };
+		F5B4CF052564C99E00B5D6BD /* WallPostCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B4CF032564C99E00B5D6BD /* WallPostCollectionCell.xib */; };
+		F5B4CF082564C9E100B5D6BD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF072564C9E100B5D6BD /* ImageCache.swift */; };
+		F5B4CF0C2564CA1F00B5D6BD /* CollectionAbstracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF0B2564CA1F00B5D6BD /* CollectionAbstracts.swift */; };
+		F5B4CF112564CC6900B5D6BD /* WallPostWithImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF102564CC6900B5D6BD /* WallPostWithImageCellViewModel.swift */; };
+		F5B4CF142564CCFA00B5D6BD /* WallPostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF132564CCFA00B5D6BD /* WallPostCellViewModel.swift */; };
+		F5B4CF182564CEF000B5D6BD /* VKReaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CF172564CEF000B5D6BD /* VKReaderFactory.swift */; };
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
@@ -46,6 +58,18 @@
 		F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResult.swift; sourceTree = "<group>"; };
 		F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
 		F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
+		F5B4CEF22564C35200B5D6BD /* WallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDTO.swift; sourceTree = "<group>"; };
+		F5B4CEF62564C3C600B5D6BD /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
+		F5B4CEF92564C52800B5D6BD /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
+		F5B4CEFD2564C97000B5D6BD /* WallPostWithImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostWithImageCollectionCell.swift; sourceTree = "<group>"; };
+		F5B4CEFE2564C97000B5D6BD /* WallPostWithImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPostWithImageCollectionCell.xib; sourceTree = "<group>"; };
+		F5B4CF022564C99E00B5D6BD /* WallPostCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostCollectionCell.swift; sourceTree = "<group>"; };
+		F5B4CF032564C99E00B5D6BD /* WallPostCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPostCollectionCell.xib; sourceTree = "<group>"; };
+		F5B4CF072564C9E100B5D6BD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		F5B4CF0B2564CA1F00B5D6BD /* CollectionAbstracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAbstracts.swift; sourceTree = "<group>"; };
+		F5B4CF102564CC6900B5D6BD /* WallPostWithImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostWithImageCellViewModel.swift; sourceTree = "<group>"; };
+		F5B4CF132564CCFA00B5D6BD /* WallPostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostCellViewModel.swift; sourceTree = "<group>"; };
+		F5B4CF172564CEF000B5D6BD /* VKReaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKReaderFactory.swift; sourceTree = "<group>"; };
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +118,7 @@
 				F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */,
 				F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */,
 				F5AD1BE7255EC3E3005BD999 /* BaseController.swift */,
+				F5B4CF072564C9E100B5D6BD /* ImageCache.swift */,
 			);
 			path = Infrastucture;
 			sourceTree = "<group>";
@@ -101,6 +126,7 @@
 		F5AD1BF3255EC781005BD999 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4CF0A2564CA0700B5D6BD /* CollectionAbstracts */,
 				FAF332762563ED86007B6F7F /* FeedScreen */,
 				F5AD1BD9255EB715005BD999 /* OAuthWebView */,
 				FACEF4FE255ADFC800E373FE /* LoginScreen */,
@@ -119,13 +145,68 @@
 		F5B4CE9F255EC85300B5D6BD /* Netwotk */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4CEF12564C24400B5D6BD /* DTO */,
+				F5B4CEF02564C24100B5D6BD /* Services */,
 				F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */,
 				F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */,
 				F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */,
 				F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */,
 				F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */,
+				F5B4CEF92564C52800B5D6BD /* URLProvider.swift */,
 			);
 			path = Netwotk;
+			sourceTree = "<group>";
+		};
+		F5B4CEF02564C24100B5D6BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CEF62564C3C600B5D6BD /* WallService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F5B4CEF12564C24400B5D6BD /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CEF22564C35200B5D6BD /* WallDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		F5B4CEFC2564C92900B5D6BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CEFD2564C97000B5D6BD /* WallPostWithImageCollectionCell.swift */,
+				F5B4CEFE2564C97000B5D6BD /* WallPostWithImageCollectionCell.xib */,
+				F5B4CF022564C99E00B5D6BD /* WallPostCollectionCell.swift */,
+				F5B4CF032564C99E00B5D6BD /* WallPostCollectionCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F5B4CF0A2564CA0700B5D6BD /* CollectionAbstracts */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CF0B2564CA1F00B5D6BD /* CollectionAbstracts.swift */,
+			);
+			path = CollectionAbstracts;
+			sourceTree = "<group>";
+		};
+		F5B4CF0F2564CC5300B5D6BD /* CellViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CF102564CC6900B5D6BD /* WallPostWithImageCellViewModel.swift */,
+				F5B4CF132564CCFA00B5D6BD /* WallPostCellViewModel.swift */,
+			);
+			path = CellViewModels;
+			sourceTree = "<group>";
+		};
+		F5B4CF162564CEE600B5D6BD /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F5B4CF172564CEF000B5D6BD /* VKReaderFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		FACEF4C9255ADE3A00E373FE = {
@@ -175,6 +256,9 @@
 		FAF332762563ED86007B6F7F /* FeedScreen */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4CF162564CEE600B5D6BD /* Factory */,
+				F5B4CF0F2564CC5300B5D6BD /* CellViewModels */,
+				F5B4CEFC2564C92900B5D6BD /* Cells */,
 				FAF332A22564135E007B6F7F /* FeedViewController.swift */,
 				FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */,
 				FAF332A32564135E007B6F7F /* FeedViewController.xib */,
@@ -242,6 +326,8 @@
 				FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */,
 				FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */,
 				FAF332A52564135E007B6F7F /* FeedViewController.xib in Resources */,
+				F5B4CF052564C99E00B5D6BD /* WallPostCollectionCell.xib in Resources */,
+				F5B4CF002564C97000B5D6BD /* WallPostWithImageCollectionCell.xib in Resources */,
 				FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B4CF142564CCFA00B5D6BD /* WallPostCellViewModel.swift in Sources */,
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
@@ -261,17 +348,26 @@
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
+				F5B4CF112564CC6900B5D6BD /* WallPostWithImageCellViewModel.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
+				F5B4CF082564C9E100B5D6BD /* ImageCache.swift in Sources */,
+				F5B4CEF72564C3C600B5D6BD /* WallService.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
+				F5B4CEFF2564C97000B5D6BD /* WallPostWithImageCollectionCell.swift in Sources */,
+				F5B4CEFA2564C52800B5D6BD /* URLProvider.swift in Sources */,
+				F5B4CEF32564C35200B5D6BD /* WallDTO.swift in Sources */,
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
 				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,
+				F5B4CF042564C99E00B5D6BD /* WallPostCollectionCell.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */,
 				F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */,
+				F5B4CF0C2564CA1F00B5D6BD /* CollectionAbstracts.swift in Sources */,
 				FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */,
 				F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */,
 				F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */,
 				F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */,
+				F5B4CF182564CEF000B5D6BD /* VKReaderFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
