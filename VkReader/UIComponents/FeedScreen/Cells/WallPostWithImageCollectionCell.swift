@@ -23,6 +23,8 @@ class WallPostWithImageCollectionCell: UICollectionViewCell, VKReaderAbstractCel
     func setupUI() {
         contentView.backgroundColor = .white
         groupImageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
     }
     
     func configure(with object: VKReaderViewModelCell) {

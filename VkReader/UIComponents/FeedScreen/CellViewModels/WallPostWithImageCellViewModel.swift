@@ -37,6 +37,9 @@ class WallPostWithImageCellViewModel: VKReaderViewModelCell {
         self.text = item.text ?? ""
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""
         imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
+        if imageHeigth < UIScreen.main.bounds.width {
+            imageHeigth = UIScreen.main.bounds.width
+        }
     }
     
     func cellIdentifier() -> String {
