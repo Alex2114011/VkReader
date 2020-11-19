@@ -6,11 +6,17 @@
     //
 
     import UIKit
-
-    class FeedViewController: BaseController {
-
-    var collectionView = UICollectionView()
-
+/// View Controller в нем происходит работа с  интерфейсом, можно сказать что это обратная сторона view которое видит пользователь
+class FeedViewController: BaseController {
+/// создаем экземпляр класса методом вычисляемого свойства, фактически при загрузке экране будет происходить назначение в константу collectionView ее свойст
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 5
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        return view
+    }()
+    ///
     var viewModel: FeedViewModel
 
     init(viewModel: FeedViewModel) {
@@ -19,53 +25,59 @@
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) has not been implemented")
     }
 
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        setUI()
-        collectionView.register(UINib(nibName: String(describing: FeedCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: FeedCollectionViewCell.self))
-
+    super.viewDidLoad()
+    setUI()
     }
-
+    
+/// Метод который ответственнен за настройку пользовательских UI элементов
     func setUI(){
-        let view = UIView()
-        view.backgroundColor = .white
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
-        
-        collectionView.backgroundColor = UIColor.white
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
- 
+        /// используем view которым управляет контроллер и добавляем в него созданный ранее collectionView
         view.addSubview(collectionView)
-        
-        self.view = view
+        collectionView.backgroundColor = UIColor(red: 230, green: 233, blue: 237, alpha: 0.07)
+        ///указываем  не создавать ограничения Auto Layout автоматически
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        ///Добавляем свои констрейнты
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        /// подписываемся под протоколы CollectionView
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    func registerCells() {
+        collectionView.register(UINib(nibName: String(describing: WallPostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostOnlyTextCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: WallPostWithImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostWithImageCollectionViewCell.self))
     }
 }
     
-
+    
+//MARK: Delegate CollectionView
     extension FeedViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return 1
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            return 
+        }
+        
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:String(describing: FeedCollectionViewCell.self), for: indexPath) as? FeedCollectionViewCell else { fatalError()}
-        cell.backgroundColor = UIColor.lightGray
-        return cell
-    }
-    }
-    extension FeedViewController: UICollectionViewDelegate {
+}
+    
+extension FeedViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("User tapped on item \(indexPath.row)")
+    print("User tapped on item \(indexPath.row)")
     }
-    }
+}
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout{
+    
+}
 

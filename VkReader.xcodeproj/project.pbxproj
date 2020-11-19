@@ -23,8 +23,10 @@
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
 		FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8488042565AF51003F841A /* CorePresentationAssembly.swift */; };
-		FAAB00C6256525F2005D3032 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */; };
-		FAAB00C7256525F2005D3032 /* FeedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */; };
+		FABC74392566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC74372566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift */; };
+		FABC743A2566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC74382566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib */; };
+		FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC743C2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift */; };
+		FABC743F2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC743D2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib */; };
 		FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */; };
 		FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4DE255ADE3B00E373FE /* Assets.xcassets */; };
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
@@ -52,8 +54,10 @@
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA8488042565AF51003F841A /* CorePresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePresentationAssembly.swift; sourceTree = "<group>"; };
-		FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
-		FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCollectionViewCell.xib; sourceTree = "<group>"; };
+		FABC74372566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABC74382566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		FABC743C2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostOnlyTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABC743D2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPostOnlyTextCollectionViewCell.xib; sourceTree = "<group>"; };
 		FACEF4D2255ADE3A00E373FE /* VkReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACEF4D5255ADE3A00E373FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACEF4DE255ADE3B00E373FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +139,17 @@
 			path = Netwotk;
 			sourceTree = "<group>";
 		};
+		FABC74332566B7AB00ABDA0A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FABC74372566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift */,
+				FABC74382566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib */,
+				FABC743C2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift */,
+				FABC743D2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		FACEF4C9255ADE3A00E373FE = {
 			isa = PBXGroup;
 			children = (
@@ -182,11 +197,10 @@
 		FAF332762563ED86007B6F7F /* FeedScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FABC74332566B7AB00ABDA0A /* Cells */,
 				FAF332A22564135E007B6F7F /* FeedViewController.swift */,
 				FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */,
 				FAF332A32564135E007B6F7F /* FeedViewController.xib */,
-				FAAB00C4256525F2005D3032 /* FeedCollectionViewCell.swift */,
-				FAAB00C5256525F2005D3032 /* FeedCollectionViewCell.xib */,
 			);
 			path = FeedScreen;
 			sourceTree = "<group>";
@@ -250,9 +264,10 @@
 			files = (
 				FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */,
 				FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */,
+				FABC743A2566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib in Resources */,
 				FAF332A52564135E007B6F7F /* FeedViewController.xib in Resources */,
-				FAAB00C7256525F2005D3032 /* FeedCollectionViewCell.xib in Resources */,
 				FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */,
+				FABC743F2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,15 +281,16 @@
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */,
 				FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */,
-				FAAB00C6256525F2005D3032 /* FeedCollectionViewCell.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
+				FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
+				FABC74392566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
 				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,
