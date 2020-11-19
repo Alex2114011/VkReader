@@ -7,7 +7,7 @@
 
 import Foundation
 import WebKit
-
+/// Этот класс отвечает за очистку WebView от кэша
 class WebCacheCleaner {
     
     static func clean() {
