@@ -7,9 +7,10 @@
 
 import Foundation
 import Security
-
+/// В этом классе реализуются методы работы с Keychain так как есть требование хранить авторизационные данные пользователей в зашифрованном виде
 class CredentialsStorage {
-    
+    ///Создается константа Data в нее мы кладем значение пароля. в kSecAttrAccount мы кладем название элемента
+    /// в этом методе при сохранении мы сначала очищаем хранилище, а затем сохраняем новое значение об этом нам говорит  SecItemDelete(query as CFDictionary)
     func save(key: String, value: String) {
         let data = value.data(using: .utf8)!
         let query = [
@@ -20,7 +21,7 @@ class CredentialsStorage {
         SecItemDelete(query as CFDictionary)
         SecItemAdd(query as CFDictionary, nil)
     }
-    
+    /// Метод отвечающий за получение зашифрованного пароля по ключу, SecItemCopyMatching возвращает нам значение
     func get(key: String) -> String? {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
@@ -39,7 +40,7 @@ class CredentialsStorage {
             return nil
         }
     }
-    
+    /// очищаем все хранилище ключей
     func remove(by key: String) {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
