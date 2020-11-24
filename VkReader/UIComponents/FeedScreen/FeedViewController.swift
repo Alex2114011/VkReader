@@ -46,7 +46,7 @@ class FeedViewController: BaseController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        /// подписываемся под протоколы CollectionView
+        /// подписываемся под протоколы CollectionView это нужно для того чтобы получить дополнительные методы в этих протоколах
         collectionView.delegate = self
         collectionView.dataSource = self
     }

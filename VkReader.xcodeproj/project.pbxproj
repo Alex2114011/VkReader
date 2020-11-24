@@ -20,9 +20,11 @@
 		F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */; };
 		F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */; };
 		F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */; };
+		FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB09256D1F8100A645EE /* WallDTO.swift */; };
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
 		FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8488042565AF51003F841A /* CorePresentationAssembly.swift */; };
+		FAAE94E0256BDF4E00583BDC /* CollectionAbstracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE94DF256BDF4E00583BDC /* CollectionAbstracts.swift */; };
 		FABC74392566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC74372566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift */; };
 		FABC743A2566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC74382566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib */; };
 		FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC743C2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift */; };
@@ -51,9 +53,11 @@
 		F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingResult.swift; sourceTree = "<group>"; };
 		F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
 		F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
+		FA61FB09256D1F8100A645EE /* WallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDTO.swift; sourceTree = "<group>"; };
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA8488042565AF51003F841A /* CorePresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePresentationAssembly.swift; sourceTree = "<group>"; };
+		FAAE94DF256BDF4E00583BDC /* CollectionAbstracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionAbstracts.swift; sourceTree = "<group>"; };
 		FABC74372566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FABC74382566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FABC743C2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostOnlyTextCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		F5AD1BF3255EC781005BD999 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FAAE94DE256BDF2100583BDC /* CollectionAbstracts */,
 				FAF332762563ED86007B6F7F /* FeedScreen */,
 				F5AD1BD9255EB715005BD999 /* OAuthWebView */,
 				FACEF4FE255ADFC800E373FE /* LoginScreen */,
@@ -130,6 +135,7 @@
 		F5B4CE9F255EC85300B5D6BD /* Netwotk */ = {
 			isa = PBXGroup;
 			children = (
+				FA61FB08256D1F6A00A645EE /* DTO */,
 				F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */,
 				F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */,
 				F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */,
@@ -137,6 +143,22 @@
 				F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */,
 			);
 			path = Netwotk;
+			sourceTree = "<group>";
+		};
+		FA61FB08256D1F6A00A645EE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FA61FB09256D1F8100A645EE /* WallDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		FAAE94DE256BDF2100583BDC /* CollectionAbstracts */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE94DF256BDF4E00583BDC /* CollectionAbstracts.swift */,
+			);
+			path = CollectionAbstracts;
 			sourceTree = "<group>";
 		};
 		FABC74332566B7AB00ABDA0A /* Cells */ = {
@@ -284,6 +306,7 @@
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
+				FAAE94E0256BDF4E00583BDC /* CollectionAbstracts.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
 				FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
@@ -292,6 +315,7 @@
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,
 				FABC74392566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
+				FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */,
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
 				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */,
