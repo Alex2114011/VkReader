@@ -10,7 +10,7 @@ import Foundation
 protocol BaseNetworkService {
     func sendRequest<T: Decodable>(url: URL, parameters: [String: String], httpMethod: HTTPMethod, headerParameters: [String: String]?, data: Data?, callback: @escaping ((LoadingResult<T>) -> Void))
 }
-
+///Класс отвечает за работу с сетью.
 class BaseNetworkServiceImpl: BaseNetworkService {
     
     let hostProvider: HostProvider
@@ -20,6 +20,14 @@ class BaseNetworkServiceImpl: BaseNetworkService {
     }
     
     
+    /// Дженерик который позволяет на его основе делать запрос в сеть
+    /// - Parameters:
+    ///   - url: Принимает значение Url адреса
+    ///   - parameters: словарь с параметрами которые передаются в запросе
+    ///   - httpMethod: Принимает тип метода из перечисления
+    ///   - headerParameters: параметры которые должны передаваться в заголовке
+    ///   - data: запрос данных в json
+    ///   - callback: замыкание которое возвращает данные  в перечисление которое выводит успех или нет
     func sendRequest<T>(url: URL,
                         parameters: [String: String],
                         httpMethod: HTTPMethod,

@@ -47,8 +47,8 @@ class FeedViewController: BaseController {
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         /// подписываемся под протоколы CollectionView это нужно для того чтобы получить дополнительные методы в этих протоколах
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
     }
     func registerCells() {
         collectionView.register(UINib(nibName: String(describing: WallPostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostOnlyTextCollectionViewCell.self))
@@ -57,27 +57,27 @@ class FeedViewController: BaseController {
 }
     
     
-//MARK: Delegate CollectionView
-    extension FeedViewController: UICollectionViewDataSource {
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 1
-        }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            return 
-        }
-        
-
-}
-    
-extension FeedViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print("User tapped on item \(indexPath.row)")
-    }
-}
-
-extension FeedViewController: UICollectionViewDelegateFlowLayout{
-    
-}
-
+////MARK: Delegate CollectionView
+//    extension FeedViewController: UICollectionViewDataSource {
+//        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//            return 1
+//        }
+//
+//        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//            return
+//        }
+//
+//
+//}
+//
+//extension FeedViewController: UICollectionViewDelegate {
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    print("User tapped on item \(indexPath.row)")
+//    }
+//}
+//
+//extension FeedViewController: UICollectionViewDelegateFlowLayout{
+//
+//}
+//

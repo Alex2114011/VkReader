@@ -21,6 +21,8 @@
 		F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */; };
 		F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */; };
 		FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB09256D1F8100A645EE /* WallDTO.swift */; };
+		FA61FB15256D631500A645EE /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB14256D631500A645EE /* WallService.swift */; };
+		FA61FB18256D802600A645EE /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB17256D802600A645EE /* URLProvider.swift */; };
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
 		FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8488042565AF51003F841A /* CorePresentationAssembly.swift */; };
@@ -54,6 +56,8 @@
 		F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
 		F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
 		FA61FB09256D1F8100A645EE /* WallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDTO.swift; sourceTree = "<group>"; };
+		FA61FB14256D631500A645EE /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
+		FA61FB17256D802600A645EE /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA8488042565AF51003F841A /* CorePresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePresentationAssembly.swift; sourceTree = "<group>"; };
@@ -135,12 +139,14 @@
 		F5B4CE9F255EC85300B5D6BD /* Netwotk */ = {
 			isa = PBXGroup;
 			children = (
+				FA61FB13256D629900A645EE /* Service */,
 				FA61FB08256D1F6A00A645EE /* DTO */,
 				F5B4CEC32562BBD500B5D6BD /* BaseNetworkService.swift */,
 				F5B4CEC72562BC3000B5D6BD /* HTTPMethod.swift */,
 				F5B4CECA2562BC8B00B5D6BD /* LoadingResult.swift */,
 				F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */,
 				F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */,
+				FA61FB17256D802600A645EE /* URLProvider.swift */,
 			);
 			path = Netwotk;
 			sourceTree = "<group>";
@@ -151,6 +157,14 @@
 				FA61FB09256D1F8100A645EE /* WallDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		FA61FB13256D629900A645EE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FA61FB14256D631500A645EE /* WallService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		FAAE94DE256BDF2100583BDC /* CollectionAbstracts */ = {
@@ -304,11 +318,13 @@
 				FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */,
 				FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
+				FA61FB18256D802600A645EE /* URLProvider.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
 				FAAE94E0256BDF4E00583BDC /* CollectionAbstracts.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
 				FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */,
+				FA61FB15256D631500A645EE /* WallService.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
