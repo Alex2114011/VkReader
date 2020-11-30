@@ -46,7 +46,7 @@ class CorePresentationAssembly {
     /// vc.corePresentation = self передаем в класс baseController ссылку на этот же класс(CorePresentationAssembly) это нужно тогда когда необходимо позволить через этот класс инициализировать ViewController
     /// - Returns: возвращает ViewController
     func feedViewController() -> UIViewController {
-        let vm = FeedViewModelImpl()
+        let vm = FeedViewModelImpl(service:coreAssembly.wallService )
         let vc = FeedViewController(viewModel: vm)
         let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self

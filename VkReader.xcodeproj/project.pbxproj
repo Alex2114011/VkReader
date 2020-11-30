@@ -36,6 +36,10 @@
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
 		FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4F6255ADEEF00E373FE /* DataModel.swift */; };
 		FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */; };
+		FAF2A2352574E8D30030F63D /* VKReaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A2342574E8D30030F63D /* VKReaderFactory.swift */; };
+		FAF2A23B2574E9580030F63D /* WallPostWithImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A23A2574E9580030F63D /* WallPostWithImageCellViewModel.swift */; };
+		FAF2A23F2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A23E2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift */; };
+		FAF2A2422574EA5A0030F63D /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A2412574EA5A0030F63D /* ImageCache.swift */; };
 		FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */; };
 		FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF332A22564135E007B6F7F /* FeedViewController.swift */; };
 		FAF332A52564135E007B6F7F /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF332A32564135E007B6F7F /* FeedViewController.xib */; };
@@ -73,6 +77,10 @@
 		FACEF4E3255ADE3B00E373FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACEF4F6255ADEEF00E373FE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FAF2A2342574E8D30030F63D /* VKReaderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKReaderFactory.swift; sourceTree = "<group>"; };
+		FAF2A23A2574E9580030F63D /* WallPostWithImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostWithImageCellViewModel.swift; sourceTree = "<group>"; };
+		FAF2A23E2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallPostOnlyTextCellViewModel.swift; sourceTree = "<group>"; };
+		FAF2A2412574EA5A0030F63D /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		FAF332A22564135E007B6F7F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FAF332A32564135E007B6F7F /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 				F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */,
 				F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */,
 				F5AD1BE7255EC3E3005BD999 /* BaseController.swift */,
+				FAF2A2412574EA5A0030F63D /* ImageCache.swift */,
 			);
 			path = Infrastucture;
 			sourceTree = "<group>";
@@ -230,9 +239,28 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		FAF2A2332574E8BF0030F63D /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2A2342574E8D30030F63D /* VKReaderFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		FAF2A2382574E92E0030F63D /* CellViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2A23A2574E9580030F63D /* WallPostWithImageCellViewModel.swift */,
+				FAF2A23E2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift */,
+			);
+			path = CellViewModels;
+			sourceTree = "<group>";
+		};
 		FAF332762563ED86007B6F7F /* FeedScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FAF2A2382574E92E0030F63D /* CellViewModels */,
+				FAF2A2332574E8BF0030F63D /* Factory */,
 				FABC74332566B7AB00ABDA0A /* Cells */,
 				FAF332A22564135E007B6F7F /* FeedViewController.swift */,
 				FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */,
@@ -314,17 +342,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF2A2422574EA5A0030F63D /* ImageCache.swift in Sources */,
 				FACEF4D6255ADE3A00E373FE /* AppDelegate.swift in Sources */,
 				FAF3327D2563EDD9007B6F7F /* FeedViewModel.swift in Sources */,
 				FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
 				FA61FB18256D802600A645EE /* URLProvider.swift in Sources */,
+				FAF2A23F2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
 				FAAE94E0256BDF4E00583BDC /* CollectionAbstracts.swift in Sources */,
+				FAF2A2352574E8D30030F63D /* VKReaderFactory.swift in Sources */,
 				F5AD1BE8255EC3E3005BD999 /* BaseController.swift in Sources */,
 				FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */,
 				FA61FB15256D631500A645EE /* WallService.swift in Sources */,
+				FAF2A23B2574E9580030F63D /* WallPostWithImageCellViewModel.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,

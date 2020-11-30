@@ -12,34 +12,30 @@ import Foundation
 /// Для определения какие данные возвращает апи обращаемся к документации
 /// https://vk.com/dev/wall.get-  для получения постов на стене
 /// https://vk.com/dev/groups.get - для получения данных о группе
-
 struct WallDTO: Codable {
     let response: Response?
 }
-// все дальнейшие дествия нацелены на то что бы создать структуру JSON в нашей модели данных.
 
+// MARK: - Response
+// все дальнейшие дествия нацелены на то что бы создать структуру JSON в нашей модели данных.
 struct Response: Codable {
     let count: Int?
-    let posts: [Post]?
+    let items: [Item]?
     let groups: [Group]?
 }
-//MARK: Group
+
+// MARK: - Group
 ///Структура которая содержит в себе данные о группе
 struct Group: Codable {
-   let id: Int?
-   let name: String?
-   let screenName: String?
-   let isClosed: Int?
-   let type: String?
-   let isAdmin: Int?
-   let isMember: Int?
-   let isAdvertiser: Int?
-   let photo50, photo100, photo200: String?
-   
+    let id: Int?
+    let name, screenName: String?
+    let isClosed: Int?
+    let type: String?
+    let isAdmin, isMember, isAdvertiser: Int?
+    let photo50, photo100, photo200: String?
     ///Перечисление в котором содержатся название полей в json.  CodingKey это протокол который позволяет импользовать это перечисление как ключ для кодирования и декодирования
     enum CodingKeys: String, CodingKey {
-        case id
-        case name
+        case id, name
         case screenName = "screen_name"
         case isClosed = "is_closed"
         case type
@@ -52,51 +48,47 @@ struct Group: Codable {
     }
 }
 
-//MARK: POST
-struct Post: Codable {
-    let id, fromId, ownerId, date, isPinned, marketAsAds: Int?
+// MARK: - Item
+struct Item: Codable {
+    let id, fromID, ownerID, date: Int?
+    let markedAsAds: Int?
     let postType, text: String?
+    let isPinned: Int?
     let attachments: [Attachment]?
-    let postSource: [PostSource]?
-    let comments: [Comment]?
-    let likes: [Like]?
-    let reposts: [Repost]?
+    let postSource: PostSource?
+    let comments: Comments?
+    let likes: Likes?
+    let reposts: Reposts?
     let views: Views?
     let isFavorite: Bool?
-    let shortTextRate: Double?
-    let carouselOffset: Double?
     let donut: Donut?
-    
+    let shortTextRate: Double?
+
     enum CodingKeys: String, CodingKey {
         case id
+        case fromID = "from_id"
+        case ownerID = "owner_id"
         case date
-        case text
-        case attachments
-        case comments
-        case likes
-        case reposts
-        case views
-        case donut
-        case isPinned = "is_pinned"
-        case fromId = "from_id"
-        case ownerId = "owner_id"
-        case marketAsAds = "marked_as_ads"
+        case markedAsAds = "marked_as_ads"
         case postType = "post_type"
+        case text
+        case isPinned = "is_pinned"
+        case attachments
         case postSource = "post_source"
+        case comments, likes, reposts, views
         case isFavorite = "is_favorite"
+        case donut
         case shortTextRate = "short_text_rate"
-        case carouselOffset = "carousel_offset"
-        
     }
 }
 
-//MARK: Attachment
+// MARK: - Attachment
 struct Attachment: Codable {
     let type: String?
     let photo: Photo?
 }
 
-//MARK: Photo
+// MARK: - Photo
 struct Photo: Codable {
     let albumID, date, id, ownerID: Int?
     let hasTags: Bool?
@@ -118,34 +110,37 @@ struct Photo: Codable {
     }
 }
 
-//MARK: Size
+// MARK: - Size
 struct Size: Codable {
     let height: Int?
     let url: String?
     let type: String?
-    let width: String?
+    let width: Int?
 }
 
-//MARK: PostSource
-struct PostSource:Codable {
-    let type: String?
-}
+// MARK: - Comments
+struct Comments: Codable {
+    let count, canPost: Int?
 
-//MARK: Comment
-struct Comment: Codable {
-    let count: Int?
-    let canPost: Int?
-    
     enum CodingKeys: String, CodingKey {
         case count
         case canPost = "can_post"
     }
 }
 
-//MARK: Like
-struct Like: Codable {
+// MARK: - Donut
+struct Donut: Codable {
+    let isDonut: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case isDonut = "is_donut"
+    }
+}
+
+// MARK: - Likes
+struct Likes: Codable {
     let count, userLikes, canLike, canPublish: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case count
         case userLikes = "user_likes"
@@ -154,27 +149,22 @@ struct Like: Codable {
     }
 }
 
-//MARK: Repost
-struct Repost: Codable {
+// MARK: - PostSource
+struct PostSource: Codable {
+    let type: String?
+}
+
+// MARK: - Reposts
+struct Reposts: Codable {
     let count, userReposted: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case count
         case userReposted = "user_reposted"
     }
 }
 
-//MARK: Views
+// MARK: - Views
 struct Views: Codable {
     let count: Int?
 }
-
-//MARK: Donut
-struct Donut: Codable{
-    let isDonut: Bool?
-    
-    enum CodingKeys: String, CodingKey {
-        case isDonut = "is_donut"
-    }
-}
-

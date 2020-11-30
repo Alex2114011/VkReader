@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// нужен для указания адреса АПИ 
 protocol HostProvider {
     var host: HostProviderImpl.Host { get set }
     func getHostURL() -> URL
