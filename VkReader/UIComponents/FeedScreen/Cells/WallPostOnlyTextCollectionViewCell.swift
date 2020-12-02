@@ -34,7 +34,7 @@ class WallPostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstract
         }
         groupNameLabel.text = model.group.name
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
-        self.model?.change(height: textHeigth + 36)
+        self.model?.change(height: textHeigth + 70)
     }
     
     func set(delegate: VKReaderAbstractCellDelegate) {

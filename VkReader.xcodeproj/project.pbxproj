@@ -100,8 +100,8 @@
 		F5AD1BD9255EB715005BD999 /* OAuthWebView */ = {
 			isa = PBXGroup;
 			children = (
-				F5AD1BDA255EB72D005BD999 /* OAuthWebViewController.swift */,
 				F5AD1BDE255EB883005BD999 /* OAuthViewModel.swift */,
+				F5AD1BDA255EB72D005BD999 /* OAuthWebViewController.swift */,
 			);
 			path = OAuthWebView;
 			sourceTree = "<group>";

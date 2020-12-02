@@ -31,6 +31,7 @@ class WallPostWithImageCellViewModel: VKReaderViewModelCell {
     var group: Group
     var imageURLString: String
     var imageHeigth: CGFloat
+    var imageWidth: CGFloat
     var text: String
     
     init(with item: Item, and group: Group) {
@@ -39,7 +40,9 @@ class WallPostWithImageCellViewModel: VKReaderViewModelCell {
         self.text = item.text ?? ""
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""
         imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
-        if imageHeigth < UIScreen.main.bounds.width {
+        imageWidth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.width ?? 0) / UIScreen.main.scale
+//        print("Высота \(imageHeigth)")
+        if imageHeigth > UIScreen.main.bounds.width {
             imageHeigth = UIScreen.main.bounds.width
         }
     }

@@ -15,6 +15,7 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
     @IBOutlet weak var groupNameLabel: UILabel!
     /// Создаем оутлет на констрейнт это нужно для того чтобы сделать динимическую высоту view
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     
 
     var model: WallPostWithImageCellViewModel?
@@ -23,7 +24,8 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
     var groupImageTask: URLSessionDataTask?
     
     func setupUI() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .green
+        imageView.backgroundColor = .blue
         groupImageView.layer.cornerRadius = 15
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
@@ -48,8 +50,9 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         }
         imageTask?.resume()
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
-        self.model?.change(height: textHeigth + 36 + model.imageHeigth)
+        self.model?.change(height: textHeigth + (70 + model.imageHeigth))
         imageHeightConstraint.constant = model.imageHeigth
+        imageWidthConstraint.constant = model.imageWidth
         delegate?.relayout()
     }
     
