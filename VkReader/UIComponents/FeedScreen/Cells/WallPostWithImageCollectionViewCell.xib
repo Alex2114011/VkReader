@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WallPostWithImageCollectionViewCell" customModule="VkReader" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="304" height="274"/>
+            <rect key="frame" x="0.0" y="0.0" width="304" height="215"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="304" height="274"/>
+                <rect key="frame" x="0.0" y="0.0" width="304" height="215"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-Wc-11a">
@@ -73,13 +73,14 @@
                 <constraint firstItem="YvJ-Nf-DKo" firstAttribute="top" secondItem="eqp-zp-RAG" secondAttribute="bottom" constant="10" id="OAX-8S-qsJ"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YvJ-Nf-DKo" secondAttribute="trailing" constant="10" id="RH4-ce-VmS"/>
                 <constraint firstAttribute="trailing" secondItem="Fc5-Wc-11a" secondAttribute="trailing" id="YiP-sG-n9Q"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="YvJ-Nf-DKo" secondAttribute="bottom" priority="999" constant="10" id="f93-O4-AgZ"/>
                 <constraint firstItem="Fc5-Wc-11a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m24-vV-eKe"/>
                 <constraint firstItem="eqp-zp-RAG" firstAttribute="top" secondItem="Fc5-Wc-11a" secondAttribute="bottom" constant="10" id="n0m-EF-A0y"/>
                 <constraint firstItem="YvJ-Nf-DKo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="10" id="tAZ-if-SqE"/>
                 <constraint firstItem="eqp-zp-RAG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="tHT-H7-fXG"/>
                 <constraint firstItem="YvJ-Nf-DKo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="yqo-91-K7c"/>
             </constraints>
-            <size key="customSize" width="304" height="274"/>
+            <size key="customSize" width="304" height="213"/>
             <connections>
                 <outlet property="groupImageView" destination="ZYA-xk-T8C" id="4TE-HX-thm"/>
                 <outlet property="groupNameLabel" destination="Xrn-oc-Vr3" id="Nb9-Sk-6Th"/>
@@ -88,7 +89,7 @@
                 <outlet property="imageWidthConstraint" destination="3KJ-hW-csO" id="Sbg-nl-NBL"/>
                 <outlet property="postLabel" destination="eqp-zp-RAG" id="dwI-Jp-8HM"/>
             </connections>
-            <point key="canvasLocation" x="-136.23188405797103" y="122.54464285714285"/>
+            <point key="canvasLocation" x="-136.23188405797103" y="102.12053571428571"/>
         </collectionViewCell>
     </objects>
     <resources>
