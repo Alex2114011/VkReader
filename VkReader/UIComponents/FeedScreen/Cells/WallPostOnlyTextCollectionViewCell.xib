@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-PT-GUY">
-                        <rect key="frame" x="0.0" y="10" width="296" height="39"/>
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="39"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="iT3-Mg-9l5">
                                 <rect key="frame" x="10" y="4.5" width="276" height="30"/>
@@ -49,7 +49,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21I-UY-sOO">
-                        <rect key="frame" x="10" y="59" width="276" height="18"/>
+                        <rect key="frame" x="10" y="49" width="276" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -61,7 +61,8 @@
                 <constraint firstItem="n4Y-PT-GUY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6jg-uZ-6sN"/>
                 <constraint firstItem="21I-UY-sOO" firstAttribute="top" secondItem="n4Y-PT-GUY" secondAttribute="bottom" constant="10" id="Qbp-D6-Uql"/>
                 <constraint firstItem="21I-UY-sOO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="e1j-fL-1im"/>
-                <constraint firstItem="n4Y-PT-GUY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="eTM-u0-RwA"/>
+                <constraint firstItem="n4Y-PT-GUY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eTM-u0-RwA"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="21I-UY-sOO" secondAttribute="bottom" constant="10" id="ehx-rb-3yc"/>
                 <constraint firstAttribute="trailing" secondItem="n4Y-PT-GUY" secondAttribute="trailing" id="pv6-tc-5lF"/>
                 <constraint firstAttribute="trailing" secondItem="21I-UY-sOO" secondAttribute="trailing" constant="10" id="qbM-Qg-yt1"/>
             </constraints>
