@@ -7,22 +7,19 @@
 
 import UIKit
 
-class DetailImageViewController: BaseController,VKReaderAbstractCellDelegate {
+class DetailImageViewController: BaseController, VKReaderAbstractCellDelegate {
+    
 
     @IBOutlet weak var imageView: UIImageView!
     
-    weak var delegate: VKReaderAbstractCellDelegate?
-    let viewModel: DetailImageViewModel
-    
-    init(viewmodel: DetailImageViewModel) {
-        self.viewModel = viewmodel
-        super.init(nibName: String(describing: DetailImageViewController.self), bundle: nil)
+    override func viewDidLoad() {
+        
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    func set(){
+        let vc = WallPostWithImageCollectionViewCell()
+        vc.delegate = self
     }
-    
     func didTap(with action: VKReaderTapAction) {
         
     }
@@ -35,11 +32,9 @@ class DetailImageViewController: BaseController,VKReaderAbstractCellDelegate {
         
     }
     
-    func passImage(image: UIImageView) {
-        
+    func passImage(image: UIImage) {
+        imageView.image = image
     }
-    
-
 }
 
 

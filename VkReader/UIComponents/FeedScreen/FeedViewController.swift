@@ -93,9 +93,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FeedViewController: VKReaderAbstractCellDelegate {
-    func passImage(image: UIImageView) {
+        func passImage(image: UIImage) {
+            
+        }
         
-    }
     
     func relayout() {
         collectionView.collectionViewLayout.invalidateLayout()

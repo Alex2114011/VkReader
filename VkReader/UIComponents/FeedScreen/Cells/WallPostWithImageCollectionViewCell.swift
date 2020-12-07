@@ -73,7 +73,9 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
 
     @objc func presentImage(sender: UITapGestureRecognizer){
         print(sender)
-        self.delegate?.passImage(image: imageView)
+        guard let image = imageView.image else {return}
+        print(image)
+        self.delegate?.passImage(image: image)
 
     }
 }

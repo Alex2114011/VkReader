@@ -67,9 +67,8 @@ class CorePresentationAssembly {
         }
     }
     
-    func detailImageViewController() -> UIViewController{
-        let vm = DetailImageViewModelImpl()
-        let vc = DetailImageViewController(viewmodel: vm)
+    func detailImageViewController() -> UIViewController {
+        let vc = DetailImageViewController()
         vc.corePresentation = self
         return vc
     }

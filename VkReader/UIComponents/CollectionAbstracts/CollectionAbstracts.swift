@@ -53,5 +53,5 @@ protocol VKReaderAbstractCellDelegate: class {
     func didTap(with action: VKReaderTapAction)
     func relayout()
     func relayout(with completion: (() -> ())?)
-    func passImage(image: UIImageView)
+    func passImage(image: UIImage)
 }
