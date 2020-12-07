@@ -24,6 +24,9 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
     var groupImageTask: URLSessionDataTask?
     
     func setupUI() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImage(sender:)))
+        imageView.addGestureRecognizer(tapRecognizer)
+        imageView.isUserInteractionEnabled = true
         contentView.backgroundColor = .green
         imageView.backgroundColor = .blue
         groupImageView.layer.cornerRadius = 15
@@ -68,5 +71,10 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         groupImageTask = nil
     }
 
+    @objc func presentImage(sender: UITapGestureRecognizer){
+        print(sender)
+        self.delegate?.passImage(image: imageView)
+
+    }
 }
 

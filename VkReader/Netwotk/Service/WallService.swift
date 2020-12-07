@@ -14,7 +14,7 @@ protocol WallService {
 
 class WallServiceImpl: WallService{
     // идентификатор владельца стены, на которой размещена запись.
-    fileprivate let ownerID: String = "-65662695" // группа с длинными постами -83978073 и с маленькими  -65662695
+    fileprivate let ownerID: String = "-83978073" // группа с длинными постами -83978073 и с маленькими  -65662695
     ///указываем свойства необходимые для отправки запроса
     let credentials: CredentialsStorage
     let baseNetworkService: BaseNetworkService
@@ -30,6 +30,7 @@ class WallServiceImpl: WallService{
         guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
         let parameters = ["count" : "\(count)", "offset": "\(offset)", "owner_id": "\(ownerID)", "access_token": token, "v": "5.126", "extended": "1"]
         baseNetworkService.sendRequest(url: urlProvider.wallGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
+        print(callback)
 
     }
 }
