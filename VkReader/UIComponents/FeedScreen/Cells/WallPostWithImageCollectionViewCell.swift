@@ -27,8 +27,7 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImage(sender:)))
         imageView.addGestureRecognizer(tapRecognizer)
         imageView.isUserInteractionEnabled = true
-        contentView.backgroundColor = .green
-        imageView.backgroundColor = .blue
+        contentView.backgroundColor = .white
         groupImageView.layer.cornerRadius = 15
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
@@ -54,8 +53,8 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         imageTask?.resume()
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
         self.model?.change(height: textHeigth + 70 + model.imageHeigth)
-        imageHeightConstraint.constant = model.imageHeigth
         imageWidthConstraint.constant = model.imageWidth
+        imageHeightConstraint.constant = model.imageHeigth
         delegate?.relayout()
     }
     
@@ -72,9 +71,7 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
     }
 
     @objc func presentImage(sender: UITapGestureRecognizer){
-        print(sender)
         guard let image = imageView.image else {return}
-        print(image)
         self.delegate?.passImage(image: image)
 
     }

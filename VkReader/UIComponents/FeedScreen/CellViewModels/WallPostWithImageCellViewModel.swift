@@ -39,11 +39,14 @@ class WallPostWithImageCellViewModel: VKReaderViewModelCell {
         self.group = group
         self.text = item.text ?? ""
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""
-        imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
-        imageWidth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.width ?? 0) / UIScreen.main.scale
+        self.imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
+        self.imageWidth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.width ?? 0) / UIScreen.main.scale
 //        print("Высота \(imageHeigth)")
         if imageHeigth > UIScreen.main.bounds.width {
             imageHeigth = UIScreen.main.bounds.width
+        }
+        if imageWidth > UIScreen.main.bounds.width {
+            imageWidth = UIScreen.main.bounds.width
         }
     }
     /// Возвращает идентификатор ячейки

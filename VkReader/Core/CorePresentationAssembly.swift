@@ -66,10 +66,4 @@ class CorePresentationAssembly {
                               completion: nil)
         }
     }
-    
-    func detailImageViewController() -> UIViewController {
-        let vc = DetailImageViewController()
-        vc.corePresentation = self
-        return vc
-    }
 }

@@ -7,34 +7,27 @@
 
 import UIKit
 
-class DetailImageViewController: BaseController, VKReaderAbstractCellDelegate {
+class DetailImageViewController: UIViewController{
     
-
+    var image:UIImage
+    
     @IBOutlet weak var imageView: UIImageView!
+   
+    init(image: UIImage) {
+        self.image = image
+        super.init(nibName: String(describing: DetailImageViewController.self), bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+  
     override func viewDidLoad() {
-        
-    }
-
-    func set(){
-        let vc = WallPostWithImageCollectionViewCell()
-        vc.delegate = self
-    }
-    func didTap(with action: VKReaderTapAction) {
-        
-    }
-    
-    func relayout() {
-        
-    }
-    
-    func relayout(with completion: (() -> ())?) {
-        
-    }
-    
-    func passImage(image: UIImage) {
         imageView.image = image
+        view.backgroundColor = .darkGray
     }
+    
 }
 
 
