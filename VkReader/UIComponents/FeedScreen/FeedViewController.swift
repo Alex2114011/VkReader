@@ -96,6 +96,8 @@ extension FeedViewController: VKReaderAbstractCellDelegate {
     func passImage(image: UIImage) {
         let vc = DetailImageViewController(image: image)
         print(image)
+        vc.modalPresentationStyle = .custom
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
     }
         
