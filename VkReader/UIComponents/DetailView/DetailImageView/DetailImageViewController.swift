@@ -35,20 +35,21 @@ class DetailImageViewController: UIViewController{
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleDismiss(sender:)))
         imageView.addGestureRecognizer(panRecognizer)
         imageView.isUserInteractionEnabled = true
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .black
     }
     
     @objc func handleDismiss(sender: UIPanGestureRecognizer) {
         sender.translation(in: imageView)
-        print(sender.translation(in: imageView).y / 100)
-        let translation = sender.translation(in: imageView).y / 100
+        let translation = abs(sender.translation(in: imageView).y / 100)
+        view.alpha = 1 - translation / 5
+        print(translation / 5)
         if translation > 1 {
-            view.alpha = 1 - translation
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
+        }
+        if sender.state == .ended{
+            view.alpha = 1
         }
     }
-    
-    
     
 }
 
