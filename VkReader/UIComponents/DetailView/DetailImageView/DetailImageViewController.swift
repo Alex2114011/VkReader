@@ -16,7 +16,7 @@ class DetailImageViewController: UIViewController{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewYConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewXConstraint: NSLayoutConstraint!
-    
+    private var panGestureAnchorPoint: CGPoint?
     init(image: UIImage) {
         self.image = image
         super.init(nibName: String(describing: DetailImageViewController.self), bundle: nil)
@@ -62,27 +62,30 @@ class DetailImageViewController: UIViewController{
     }
     
     @objc func handleDismiss(sender: UIPanGestureRecognizer) {
-        sender.translation(in: imageView)
-        switch sender.state {
-        case .changed:
-            let translationY = sender.translation(in: imageView).y
-            let translationX = sender.translation(in: imageView).x
-            imageViewYConstraint.constant = translationY
-            imageViewXConstraint.constant = translationX
-            view.alpha = 1 - (abs(translationY) + abs(translationX)) / 600
+        if sender.state == .began{
+            panGestureAnchorPoint = sender.translation(in: imageView)
+        }
+        if sender.state == .changed{
+        guard let panGestureAnchorPoint = panGestureAnchorPoint else { fatalError("nil")}
+        print(panGestureAnchorPoint)
+        let gesturePoint = sender.translation(in: imageView)
+        print(gesturePoint)
+        imageViewYConstraint.constant += gesturePoint.y - panGestureAnchorPoint.y
+        imageViewXConstraint.constant += gesturePoint.x - panGestureAnchorPoint.x
+            view.alpha = 1 - (abs(gesturePoint.y) + abs(gesturePoint.x)) / 300
+        self.panGestureAnchorPoint = gesturePoint
             if imageViewYConstraint.constant > 300 || imageViewYConstraint.constant < -300 ||
                 imageViewXConstraint.constant  > 300 || imageViewXConstraint.constant  < -300 {
                 self.dismiss(animated: false, completion: nil)
             }
-        case .ended, .cancelled:
+        }
+        if sender.state == .ended{
             view.alpha = 1
-            imageViewYConstraint.constant = 0
-            imageViewXConstraint.constant = 0
-        default:
-            break
+//            imageViewYConstraint.constant = 0
+//            imageViewXConstraint.constant = 0
+            
         }
     }
-    
     @objc func pinchForZoom(sender: UIPinchGestureRecognizer) {
             let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
             guard let scale = scaleResult, scale.a > 1, scale.d > 1  else {return}
