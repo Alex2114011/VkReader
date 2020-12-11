@@ -10,20 +10,12 @@ import UIKit
 class DetailImageViewController: UIViewController{
     
     var image:UIImage
-    
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewYConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewXConstraint: NSLayoutConstraint!
-    
-    let panGestureRecognizer = UIPanGestureRecognizer()
-    var panGestureAnchorPoint: CGPoint?
-    let pinchGestureRecognizer = UIPinchGestureRecognizer()
-    var pinchGestureAnchorScale: CGFloat?
-    
-    var scale: CGFloat = 1.0
     
     init(image: UIImage) {
         self.image = image
@@ -38,66 +30,63 @@ class DetailImageViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
-//        setUI()
-        setupGestureRecognizers()
+        setUI()
     }
     
-    func setupGestureRecognizers() {
-        panGestureRecognizer.addTarget(self, action: #selector(handlePanGesture(_:)))
-        pinchGestureRecognizer.addTarget(self, action: #selector(handlePinchGesture(_:)))
-        imageView.addGestureRecognizer(panGestureRecognizer)
+    func setUI(){
+        imageView.isUserInteractionEnabled = true
+        view.backgroundColor = .black
+        sizesImageView()
+        recognizers()
     }
-
     
-    @objc func handlePanGesture(_ gestureRecognizer: UIPanGestureRecognizer){
-//        print(gestureRecognizer.state)
-        switch gestureRecognizer.state {
-        case .began:
-            panGestureAnchorPoint = gestureRecognizer.location(in: imageView)
-//            print(panGestureAnchorPoint)
+    func sizesImageView(){
+        var height = image.size.height
+        var width = image.size.width
+        if height > UIScreen.main.bounds.height - 100{
+            height = UIScreen.main.bounds.height
+        }
+        if width > UIScreen.main.bounds.width{
+            width = UIScreen.main.bounds.width
+        }
+        imageViewHeightConstraint.constant = height
+        imageViewWidthConstraint.constant = width
+    }
+ 
+    
+    func recognizers(){
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleDismiss(sender:)))
+        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchForZoom(sender:)))
+        imageView.addGestureRecognizer(panRecognizer)
+        imageView.addGestureRecognizer(pinchRecognizer)
+    }
+    
+    @objc func handleDismiss(sender: UIPanGestureRecognizer) {
+        sender.translation(in: imageView)
+        switch sender.state {
         case .changed:
-            guard let panGestureAnchorPoint = panGestureAnchorPoint else { return }
-            let gesturePoint = gestureRecognizer.location(in: imageView)
-            
-            imageViewXConstraint.constant += gesturePoint.x - panGestureAnchorPoint.x
-            imageViewYConstraint.constant += gesturePoint.y - panGestureAnchorPoint.y
-//            self.panGestureAnchorPoint = gesturePoint
-            
-        case .cancelled, .ended:
-        panGestureAnchorPoint = nil
-        case .failed, .possible:
-        panGestureAnchorPoint = nil
+            let translationY = sender.translation(in: imageView).y
+            let translationX = sender.translation(in: imageView).x
+            imageViewYConstraint.constant = translationY
+            imageViewXConstraint.constant = translationX
+            view.alpha = 1 - (abs(translationY) + abs(translationX)) / 600
+            if imageViewYConstraint.constant > 300 || imageViewYConstraint.constant < -300 ||
+                imageViewXConstraint.constant  > 300 || imageViewXConstraint.constant  < -300 {
+                self.dismiss(animated: false, completion: nil)
+            }
+        case .ended, .cancelled:
+            view.alpha = 1
+            imageViewYConstraint.constant = 0
+            imageViewXConstraint.constant = 0
+        default:
             break
         }
     }
     
-    @objc func handlePinchGesture(_ gestureRecognizer: UIPinchGestureRecognizer){
-        switch gestureRecognizer.state {
-        case .began:
-            pinchGestureAnchorScale = gestureRecognizer.scale
-        case .changed:
-        guard let pinchGestureAnchorScale = pinchGestureAnchorScale else { return }
-        let gestureScale = gestureRecognizer.scale
-        scale += gestureScale - pinchGestureAnchorScale
-            self.pinchGestureAnchorScale = gestureScale
-        default:
-            <#code#>
+    @objc func pinchForZoom(sender: UIPinchGestureRecognizer) {
+            let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+            guard let scale = scaleResult, scale.a > 1, scale.d > 1  else {return}
+            sender.view?.transform = scale
+            sender.scale = 1
         }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
 }
-
-extension DetailImageViewController: UIGestureRecognizerDelegate{
-    
-    
-    
-    
-}
-
