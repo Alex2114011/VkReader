@@ -67,9 +67,9 @@ class DetailImageViewController: UIViewController{
         }
         if sender.state == .changed{
         guard let panGestureAnchorPoint = panGestureAnchorPoint else { fatalError("nil")}
-        print(panGestureAnchorPoint)
+
         let gesturePoint = sender.translation(in: imageView)
-        print(gesturePoint)
+
         imageViewYConstraint.constant += gesturePoint.y - panGestureAnchorPoint.y
         imageViewXConstraint.constant += gesturePoint.x - panGestureAnchorPoint.x
             view.alpha = 1 - (abs(gesturePoint.y) + abs(gesturePoint.x)) / 300

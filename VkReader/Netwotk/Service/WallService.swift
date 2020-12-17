@@ -30,7 +30,7 @@ class WallServiceImpl: WallService{
         guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
         let parameters = ["count" : "\(count)", "offset": "\(offset)", "owner_id": "\(ownerID)", "access_token": token, "v": "5.126", "extended": "1"]
         baseNetworkService.sendRequest(url: urlProvider.wallGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
-        print(callback)
+
 
     }
 }

@@ -19,5 +19,7 @@ class CoreAssembly {
     /// Экземпляр класса BaseNetworkServiceImpl в котором реализован метод отправки сетевого запроса
     lazy var baseNetworkingService = BaseNetworkServiceImpl(hostProvider: hostProvider)
     lazy var wallService: WallService = WallServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
+    
+    lazy var commentsService: CommentsService = CommentsServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
 }
 
