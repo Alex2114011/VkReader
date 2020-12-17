@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol DetailPostViewModel {
+    
+}
+
+class DetailPostViewModelImpl: DetailPostViewModel{
+    
+//    let service
+    
+}
