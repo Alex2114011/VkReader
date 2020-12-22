@@ -33,7 +33,7 @@ class FeedViewController: BaseController {
         super.viewDidLoad()
         setupUI()
         viewModel.getWall()
-        viewModel.getCom()
+//        viewModel.getComment()
     }
     
     func setupUI() {
@@ -80,6 +80,10 @@ extension FeedViewController: UICollectionViewDelegate {
         if indexPath.row - 2 >= viewModel.sections[indexPath.section].cellsViewModel.count - 3 {
             viewModel.nextPage()
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.getPostID(indexPath: indexPath.row)
+        viewModel.index = indexPath.row
     }
 }
 

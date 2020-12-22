@@ -63,7 +63,7 @@ class BaseNetworkServiceImpl: BaseNetworkService {
             }
             
             let rawJson = try? JSONSerialization.jsonObject(with: data, options: [])
-
+            print("Start \(rawJson) end")
             guard let jsonModel = try? JSONDecoder().decode(T.self, from: data) else {
                 DispatchQueue.main.async {
                     callback(.failure(nil))
@@ -73,6 +73,7 @@ class BaseNetworkServiceImpl: BaseNetworkService {
             
             DispatchQueue.main.async {
                 callback(.success(jsonModel))
+                print("st!!! \(jsonModel) en!!!")
             }
         }.resume()
         

@@ -13,20 +13,20 @@ import Foundation
 /// https://vk.com/dev/wall.get-  для получения постов на стене
 /// https://vk.com/dev/groups.get - для получения данных о группе
 struct WallDTO: Codable {
-    let response: Response?
+    let response: WallResponse?
 }
 
 // MARK: - Response
 // все дальнейшие дествия нацелены на то что бы создать структуру JSON в нашей модели данных.
-struct Response: Codable {
+struct WallResponse: Codable {
     let count: Int?
-    let items: [Item]?
-    let groups: [Group]?
+    let items: [WallItem]?
+    let groups: [WallGroup]?
 }
 
 // MARK: - Group
 ///Структура которая содержит в себе данные о группе
-struct Group: Codable {
+struct WallGroup: Codable {
     let id: Int?
     let name, screenName: String?
     let isClosed: Int?
@@ -49,19 +49,19 @@ struct Group: Codable {
 }
 
 // MARK: - Item
-struct Item: Codable {
+struct WallItem: Codable {
     let id, fromID, ownerID, date: Int?
     let markedAsAds: Int?
     let postType, text: String?
     let isPinned: Int?
-    let attachments: [Attachment]?
-    let postSource: PostSource?
-    let comments: Comments?
-    let likes: Likes?
-    let reposts: Reposts?
-    let views: Views?
+    let attachments: [WallAttachment]?
+    let postSource: WallPostSource?
+    let comments: WallComments?
+    let likes: WallLikes?
+    let reposts: WallReposts?
+    let views: WallViews?
     let isFavorite: Bool?
-    let donut: Donut?
+    let donut: WallDonut?
     let shortTextRate: Double?
 
     enum CodingKeys: String, CodingKey {
@@ -83,18 +83,18 @@ struct Item: Codable {
 }
 
 // MARK: - Attachment
-struct Attachment: Codable {
+struct WallAttachment: Codable {
     let type: String?
-    let photo: Photo?
+    let photo: WallPhoto?
 }
 
 // MARK: - Photo
-struct Photo: Codable {
+struct WallPhoto: Codable {
     let albumID, date, id, ownerID: Int?
     let hasTags: Bool?
     let accessKey: String?
     let postID: Int?
-    let sizes: [Size]?
+    let sizes: [WallSize]?
     let text: String?
     let userID: Int?
 
@@ -111,7 +111,7 @@ struct Photo: Codable {
 }
 
 // MARK: - Size
-struct Size: Codable {
+struct WallSize: Codable {
     let height: Int?
     let url: String?
     let type: String?
@@ -119,7 +119,7 @@ struct Size: Codable {
 }
 
 // MARK: - Comments
-struct Comments: Codable {
+struct WallComments: Codable {
     let count, canPost: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -129,7 +129,7 @@ struct Comments: Codable {
 }
 
 // MARK: - Donut
-struct Donut: Codable {
+struct WallDonut: Codable {
     let isDonut: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -138,7 +138,7 @@ struct Donut: Codable {
 }
 
 // MARK: - Likes
-struct Likes: Codable {
+struct WallLikes: Codable {
     let count, userLikes, canLike, canPublish: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -150,12 +150,12 @@ struct Likes: Codable {
 }
 
 // MARK: - PostSource
-struct PostSource: Codable {
+struct WallPostSource: Codable {
     let type: String?
 }
 
 // MARK: - Reposts
-struct Reposts: Codable {
+struct WallReposts: Codable {
     let count, userReposted: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -165,6 +165,6 @@ struct Reposts: Codable {
 }
 
 // MARK: - Views
-struct Views: Codable {
+struct WallViews: Codable {
     let count: Int?
 }

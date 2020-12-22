@@ -193,18 +193,10 @@
 		FA849B74257E1E9200FCFEE1 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
-				FA849B75257E1EB800FCFEE1 /* DetailImageView */,
-			);
-			path = DetailView;
-			sourceTree = "<group>";
-		};
-		FA849B75257E1EB800FCFEE1 /* DetailImageView */ = {
-			isa = PBXGroup;
-			children = (
 				FA849B76257E1F4E00FCFEE1 /* DetailImageViewController.swift */,
 				FA849B77257E1F4E00FCFEE1 /* DetailImageViewController.xib */,
 			);
-			path = DetailImageView;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		FAAE94DE256BDF2100583BDC /* CollectionAbstracts */ = {

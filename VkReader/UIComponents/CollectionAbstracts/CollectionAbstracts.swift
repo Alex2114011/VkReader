@@ -17,6 +17,7 @@ protocol VKReaderViewModelCell {
     func height() -> VKReaderCellHeight
     func change(height value: CGFloat)
     func heightIsCounted() -> Bool
+    func formatNumber(_ n: Int) -> String
 }
 /// делаем расширение так как оно может быть нужно не везде
 extension VKReaderViewModelCell {

@@ -9,16 +9,24 @@ import UIKit
 ///Модель для ячейки без текста
 class WallPostOnlyTextCellViewModel: VKReaderViewModelCell {
     
+    
     private var dynamicHeight: CGFloat = 0
     
-    var item: Item
-    var group: Group
+    var item: WallItem
+    var group: WallGroup
     var text: String
+    var likeCounts: Int
+    var commentsCount: Int
+    var viewsCount: Int
     
-    init(with item: Item, and group: Group) {
+    
+    init(with item: WallItem, and group: WallGroup) {
         self.item = item
         self.group = group
         self.text = item.text ?? ""
+        self.likeCounts = item.likes?.count ?? 0
+        self.commentsCount = item.comments?.count ?? 0
+        self.viewsCount = item.views?.count ?? 0
     }
     
     func cellIdentifier() -> String {
@@ -42,6 +50,33 @@ class WallPostOnlyTextCellViewModel: VKReaderViewModelCell {
     func change(height value: CGFloat) {
         if dynamicHeight == 0 {
             dynamicHeight = value
+        }
+    }
+    func formatNumber(_ n: Int) -> String {
+        let num = abs(Double(n))
+        let sign = (n < 0) ? "-" : ""
+
+        switch num {
+        case 1_000_000_000...:
+            var formatted = num / 1_000_000_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)B"
+
+        case 1_000_000...:
+            var formatted = num / 1_000_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)M"
+
+        case 1_000...:
+            var formatted = num / 1_000
+            formatted = formatted.reduceScale(to: 1)
+            return "\(sign)\(formatted)K"
+
+        case 0...:
+            return "\(n)"
+
+        default:
+            return "\(sign)\(n)"
         }
     }
 }

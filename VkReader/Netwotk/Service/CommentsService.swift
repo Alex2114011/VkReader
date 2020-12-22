@@ -9,15 +9,24 @@ import Foundation
 
 protocol CommentsService {
     func getComments(count: Int, with offset: Int, callback: @escaping ((LoadingResult<CommentDTO>) -> Void))
+    var postID: Int {get set}
 }
 
 class CommentsServiceImpl: CommentsService{
+    var postID:Int = 0 {
+        didSet{
+            print("CommentsServiceImpl OLD \(oldValue)")
+        } willSet{
+            print("CommentsServiceImpl NEW \(newValue)")
+        }
+    }
+    
     fileprivate let ownerID: String = "-65662695" // группа с длинными постами -83978073 и с маленькими  -65662695
     ///указываем свойства необходимые для отправки запроса
     let credentials: CredentialsStorage
     let baseNetworkService: BaseNetworkService
     let urlProvider: URLProvider
-    let postID = 859767
+
     
     init(credentials: CredentialsStorage, baseNetworkService: BaseNetworkService, urlProvider: URLProvider) {
         self.credentials = credentials

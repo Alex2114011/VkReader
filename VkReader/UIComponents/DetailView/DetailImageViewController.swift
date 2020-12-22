@@ -74,12 +74,12 @@ class DetailImageViewController: UIViewController{
         imageViewXConstraint.constant += gesturePoint.x - panGestureAnchorPoint.x
             view.alpha = 1 - (abs(gesturePoint.y) + abs(gesturePoint.x)) / 300
         self.panGestureAnchorPoint = gesturePoint
-            if imageViewYConstraint.constant > 300 || imageViewYConstraint.constant < -300 ||
-                imageViewXConstraint.constant  > 300 || imageViewXConstraint.constant  < -300 {
-                self.dismiss(animated: false, completion: nil)
-            }
+//            if imageViewYConstraint.constant > 300 || imageViewYConstraint.constant < -300 ||
+//                imageViewXConstraint.constant  > 300 || imageViewXConstraint.constant  < -300 {
+//            }
         }
         if sender.state == .ended{
+            self.dismiss(animated: false, completion: nil)
             view.alpha = 1
 //            imageViewYConstraint.constant = 0
 //            imageViewXConstraint.constant = 0
