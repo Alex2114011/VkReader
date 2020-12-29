@@ -43,10 +43,15 @@ class PostDetailViewModelImpl: PostDetailViewModel {
             case .success(let dto):
                 print(#function , dto)
                 var models: [VKReaderViewModelCell] = []
-                guard let profile = dto.response?.profiles?.first else { return }
-                dto.response?.items?.forEach({
-                    models.append(VKReaderFactory.makeCommentModel(with: $0, and: profile))
-                 })
+                guard let profiles = dto.response?.profiles else { return }
+                                for item in (dto.response?.items ?? []) {
+                                    let _profile = profiles.first { (prof) -> Bool in
+                                        return prof.id == item.fromID
+                                    }
+                                    if let profile = _profile {
+                                        models.append(VKReaderFactory.makeCommentModel(with: item, and: profile))
+                                    }
+                                }
                 let section = VKReaderSection()
                 section.cellsViewModel = models
                 self.sections = [section]
@@ -64,14 +69,15 @@ class PostDetailViewModelImpl: PostDetailViewModel {
             switch result {
             case .success(let dto):
                 var models: [VKReaderViewModelCell] = []
-                guard let profile = dto.response?.profiles?.first else { return }
-                dto.response?.items?.forEach({
-                    models.append(VKReaderFactory.makeCommentModel(with: $0, and: profile))
-                })
-//                dto.response?.items?.forEach({ (result) in
-//                    self.postsId.append(result.id ?? 0)
-//                    print("!postsId \(self.postsId)")
-//                })
+                guard let profiles = dto.response?.profiles else { return }
+                for item in dto.response?.items ?? []{
+                   let _profile = profiles.first{ (prof) -> Bool in
+                        return prof.id == item.fromID
+                    }
+                    if let profile = _profile {
+                        models.append(VKReaderFactory.makeCommentModel(with: item, and: profile))
+                }
+            }
                 if let readerSection = self.sections.first as? VKReaderSection {
                     let startIndexPath = IndexPath(row: readerSection.cellsViewModel.count - 1, section: 0)
                     let indexes: [IndexPath] = self.generateIndexPath(count: models.count, from: startIndexPath)
