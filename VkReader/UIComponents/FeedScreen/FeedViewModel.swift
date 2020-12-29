@@ -20,7 +20,7 @@ protocol FeedViewModel {
     func nextPage()
     var postsId:[Int] {get set}
     var index:Int? {get set}
-    func getPostID(indexPath: Int)
+    func getPostID(indexPath: Int) -> Int
 }
 
 class FeedViewModelImpl: FeedViewModel{
@@ -95,10 +95,11 @@ class FeedViewModelImpl: FeedViewModel{
         }
     }
     
-    func getPostID(indexPath: Int){
+    func getPostID(indexPath: Int) -> Int {
         let postID = self.postsId[indexPath]
         commentService.postID = postID
         print("!postsId \(postID)")
+        return postID
     }
     
     

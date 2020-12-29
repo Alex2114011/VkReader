@@ -84,11 +84,10 @@ extension FeedViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getPostID(indexPath: indexPath.row)
         viewModel.index = indexPath.row
-        
+        let viewModelCell = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
         guard let core = corePresentation else { return }
-        self.present(core.postDetailViewController(), animated: true, completion: nil)
+        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row)), animated: true, completion: nil)
         
     }
 }

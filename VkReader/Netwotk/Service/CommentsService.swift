@@ -9,6 +9,7 @@ import Foundation
 
 protocol CommentsService {
     func getComments(count: Int, with offset: Int, callback: @escaping ((LoadingResult<CommentDTO>) -> Void))
+    func getComments(for postIdentifier: Int, count: Int, with offset: Int, callback: @escaping ((LoadingResult<CommentDTO>) -> Void))
     var postID: Int {get set}
 }
 
@@ -41,5 +42,11 @@ class CommentsServiceImpl: CommentsService{
         baseNetworkService.sendRequest(url: urlProvider.commentsGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
 
 
+    }
+    
+    func getComments(for postIdentifier: Int, count: Int, with offset: Int, callback: @escaping ((LoadingResult<CommentDTO>) -> Void)) {
+        guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
+        let parameters = ["count" : "\(count)", "offset": "\(offset)", "owner_id": "\(ownerID)", "access_token": token, "post_id":"\(postIdentifier)", "sort":sort, "v": "5.126", "extended": "1"]
+        baseNetworkService.sendRequest(url: urlProvider.commentsGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
     }
 }

@@ -26,10 +26,14 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     var commentService: CommentsService
     
     var sections: [VKReaderSectionModel] = []
+    var postViewModel: VKReaderViewModelCell
     weak var delegate: PostViewDelegate?
+    let postIdentifier: Int
     
-    init(commentService:CommentsService) {
+    init(commentService:CommentsService, postViewModel: VKReaderViewModelCell, postIdentifier: Int) {
         self.commentService = commentService
+        self.postViewModel = postViewModel
+        self.postIdentifier = postIdentifier
     }
     
     func set(delegate: PostViewDelegate) {
@@ -37,18 +41,24 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     }
     
     func getComment() {
-        commentService.getComments(count: 100, with: 0) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, count: 100, with: 0) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
                 print(#function , dto)
                 var models: [VKReaderViewModelCell] = []
-                guard let profile = dto.response?.profiles?.first else { return }
-                dto.response?.items?.forEach({
-                    models.append(VKReaderFactory.makeCommentModel(with: $0, and: profile))
-                 })
+                guard let profiles = dto.response?.profiles else { return }
+                for item in (dto.response?.items ?? []) {
+                    let _profile = profiles.first { (prof) -> Bool in
+                        return prof.id == item.fromID
+                    }
+                    if let profile = _profile {
+                        models.append(VKReaderFactory.makeCommentModel(with: item, and: profile))
+                    }
+                }
                 let section = VKReaderSection()
-                section.cellsViewModel = models
+                section.cellsViewModel.append(self.postViewModel)
+                section.cellsViewModel.append(contentsOf: models)
                 self.sections = [section]
                 self.delegate?.reloadData()
             case .failure(let error):
