@@ -1,16 +1,17 @@
-    //
-    //  FeedViewController.swift
-    //  VkReader
-    //
-    //  Created by Alex on 17.11.2020.
-    //
+//
+//  PostDetailViewController.swift
+//  VkReader
+//
+//  Created by Alex on 27.12.2020.
+//
 
-    import UIKit
-/// View Controller в нем происходит работа с  интерфейсом, можно сказать что это обратная сторона view которое видит пользователь
-class FeedViewController: BaseController {
-   
-    var viewModel: FeedViewModel
-    let collectionView: UICollectionView = {
+import UIKit
+
+class PostDetailViewController: BaseController {
+    
+    var viewModel:PostDetailViewModel
+    
+    let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 5
@@ -18,22 +19,19 @@ class FeedViewController: BaseController {
         return view
     }()
     
-    init(viewModel: FeedViewModel) {
+    init(viewModel: PostDetailViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: String(describing: FeedViewController.self), bundle: nil)
+        super.init(nibName: String(describing: PostDetailViewController.self), bundle: nil)
         self.viewModel.set(delegate: self)
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("поломалось тут")
     }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getComment()
         setupUI()
-        viewModel.getWall()
-//        viewModel.getComment()
     }
     
     func setupUI() {
@@ -52,13 +50,16 @@ class FeedViewController: BaseController {
     func registerCells() {
         collectionView.register(UINib(nibName: String(describing: WallPostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostOnlyTextCollectionViewCell.self))
         collectionView.register(UINib(nibName: String(describing: WallPostWithImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostWithImageCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: PostOnlyTextCollectionViewCell.self), bundle: nil),
+            forCellWithReuseIdentifier: String(describing: PostOnlyTextCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: PostWithImageCollectionViewCell.self), bundle: nil),
+            forCellWithReuseIdentifier: String(describing: PostWithImageCollectionViewCell.self))
     }
-    
 }
 
-extension FeedViewController: UICollectionViewDataSource {
+extension PostDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("количество секций в ленте \(viewModel.sections.count)")
+        print("количество секций  \(viewModel.sections.count)")
         return viewModel.sections.count
     }
     
@@ -68,6 +69,7 @@ extension FeedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
+        print("Какая ячейка будет выбрана \(item)")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.cellIdentifier(), for: indexPath) as! VKReaderAbstractCell
         cell.setupUI()
         cell.set(delegate: self)
@@ -76,24 +78,18 @@ extension FeedViewController: UICollectionViewDataSource {
     }
 }
 
-extension FeedViewController: UICollectionViewDelegate {
+extension PostDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row - 2 >= viewModel.sections[indexPath.section].cellsViewModel.count - 3 {
-            viewModel.nextPage()
+            viewModel.nextComment()
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.getPostID(indexPath: indexPath.row)
         viewModel.index = indexPath.row
-        
-        guard let core = corePresentation else { return }
-        self.present(core.postDetailViewController(), animated: true, completion: nil)
-        
     }
 }
 
-extension FeedViewController: UICollectionViewDelegateFlowLayout {
+extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row].height()
         switch item {
@@ -103,13 +99,13 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension FeedViewController: VKReaderAbstractCellDelegate {
+extension PostDetailViewController: VKReaderAbstractCellDelegate {
     func passImage(image: UIImage) {
-        let vc = DetailImageViewController(image: image)
-        print(image)
-        vc.modalPresentationStyle = .custom
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
+//        let vc = DetailImageViewController(image: image)
+//        print(image)
+//        vc.modalPresentationStyle = .custom
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true, completion: nil)
     }
         
     func relayout() {
@@ -128,7 +124,7 @@ extension FeedViewController: VKReaderAbstractCellDelegate {
     }
 }
 
-extension FeedViewController: FeedViewDelegate {
+extension PostDetailViewController: PostViewDelegate {
     func reloadData() {
         collectionView.reloadData()
     }
@@ -140,3 +136,4 @@ extension FeedViewController: FeedViewDelegate {
     }
     
 }
+

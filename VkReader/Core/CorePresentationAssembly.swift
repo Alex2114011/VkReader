@@ -53,6 +53,16 @@ class CorePresentationAssembly {
         navigationController.modalPresentationStyle = .fullScreen
         return  navigationController
     }
+    
+    func postDetailViewController() -> UIViewController {
+        let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService)
+       
+        let vc = PostDetailViewController(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: vc)
+        vc.corePresentation = self
+        navigationController.modalPresentationStyle = .fullScreen
+        return  navigationController
+    }
     /// Этот метод позволяет переназначить navigation controller указанный в AppDelegate на другой VC это нужно для первого входа после авторизации пользователя, 
     func swapWindowRoot(to viewController: UIViewController) {
         if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
