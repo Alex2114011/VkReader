@@ -50,10 +50,8 @@ class PostDetailViewController: BaseController {
     func registerCells() {
         collectionView.register(UINib(nibName: String(describing: WallPostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostOnlyTextCollectionViewCell.self))
         collectionView.register(UINib(nibName: String(describing: WallPostWithImageCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostWithImageCollectionViewCell.self))
-        collectionView.register(UINib(nibName: String(describing: PostOnlyTextCollectionViewCell.self), bundle: nil),
-            forCellWithReuseIdentifier: String(describing: PostOnlyTextCollectionViewCell.self))
-        collectionView.register(UINib(nibName: String(describing: PostWithImageCollectionViewCell.self), bundle: nil),
-            forCellWithReuseIdentifier: String(describing: PostWithImageCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: PostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: PostOnlyTextCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: PostWithImageCollectionViewCell.self), bundle: nil),forCellWithReuseIdentifier: String(describing: PostWithImageCollectionViewCell.self))
     }
 }
 
