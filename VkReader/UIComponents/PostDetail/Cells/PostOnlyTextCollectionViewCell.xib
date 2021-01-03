@@ -18,6 +18,52 @@
                 <rect key="frame" x="0.0" y="0.0" width="333" height="81"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ij7-hg-zGw">
+                        <rect key="frame" x="48" y="52" width="285" height="29"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xB7-p2-X9M">
+                                <rect key="frame" x="222" y="1.5" width="20.5" height="26.5"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 мар 2020 г." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4v-YU-2u1">
+                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-ln-bQS">
+                                <rect key="frame" x="123.5" y="0.0" width="67" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Ответить">
+                                    <color key="titleColor" systemColor="systemGrayColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRZ-Px-zmD">
+                                <rect key="frame" x="250.5" y="0.0" width="26.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="1hK-N2-rq3"/>
+                            <constraint firstAttribute="trailing" secondItem="xB7-p2-X9M" secondAttribute="trailing" priority="1" constant="8" id="3Dg-29-vQO"/>
+                            <constraint firstAttribute="bottom" secondItem="xB7-p2-X9M" secondAttribute="bottom" id="3gd-0C-EAR"/>
+                            <constraint firstItem="m5v-ln-bQS" firstAttribute="leading" secondItem="G4v-YU-2u1" secondAttribute="trailing" constant="27" id="6KM-dt-U8v"/>
+                            <constraint firstAttribute="bottom" secondItem="m5v-ln-bQS" secondAttribute="bottom" id="6cA-o6-MRx"/>
+                            <constraint firstItem="G4v-YU-2u1" firstAttribute="top" secondItem="Ij7-hg-zGw" secondAttribute="top" id="BaU-ax-8x2"/>
+                            <constraint firstAttribute="width" constant="285" id="Csl-Kq-KXy"/>
+                            <constraint firstAttribute="bottom" secondItem="G4v-YU-2u1" secondAttribute="bottom" id="IHw-ss-YMd"/>
+                            <constraint firstItem="kRZ-Px-zmD" firstAttribute="top" secondItem="Ij7-hg-zGw" secondAttribute="top" id="JuI-dH-IxI"/>
+                            <constraint firstItem="kRZ-Px-zmD" firstAttribute="leading" secondItem="xB7-p2-X9M" secondAttribute="trailing" constant="8" symbolic="YES" id="KPm-Lt-lBs"/>
+                            <constraint firstItem="m5v-ln-bQS" firstAttribute="top" secondItem="Ij7-hg-zGw" secondAttribute="top" id="SlS-Du-fYL"/>
+                            <constraint firstAttribute="bottom" secondItem="kRZ-Px-zmD" secondAttribute="bottom" id="Wqe-0V-wRd"/>
+                            <constraint firstItem="xB7-p2-X9M" firstAttribute="top" secondItem="Ij7-hg-zGw" secondAttribute="top" id="ji9-PJ-Xp8"/>
+                            <constraint firstAttribute="trailing" secondItem="kRZ-Px-zmD" secondAttribute="trailing" constant="8" id="qkF-66-0Eh"/>
+                            <constraint firstItem="G4v-YU-2u1" firstAttribute="leading" secondItem="Ij7-hg-zGw" secondAttribute="leading" id="rIi-v9-Ml3"/>
+                        </constraints>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gNe-Av-LwQ">
                         <rect key="frame" x="8" y="8.5" width="35" height="35"/>
                         <constraints>
@@ -41,48 +87,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GeW-On-hTN">
-                        <rect key="frame" x="48" y="52" width="277" height="29"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 мар в 17:51" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4v-YU-2u1">
-                                <rect key="frame" x="0.0" y="0.0" width="92" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-ln-bQS">
-                                <rect key="frame" x="97" y="0.0" width="123" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <state key="normal" title="Reply">
-                                    <color key="titleColor" systemColor="systemGray2Color"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xB7-p2-X9M">
-                                <rect key="frame" x="225" y="1.5" width="20.5" height="26.5"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRZ-Px-zmD">
-                                <rect key="frame" x="250.5" y="0.0" width="26.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="systemGray3Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="lR7-RN-Dl1" secondAttribute="trailing" constant="8" id="0bF-lb-F1U"/>
-                <constraint firstItem="GeW-On-hTN" firstAttribute="top" secondItem="lR7-RN-Dl1" secondAttribute="bottom" constant="5" id="1t6-G1-Gjp"/>
                 <constraint firstItem="yNF-LX-XgD" firstAttribute="leading" secondItem="gNe-Av-LwQ" secondAttribute="trailing" constant="5" id="85K-Wf-tyZ"/>
+                <constraint firstItem="Ij7-hg-zGw" firstAttribute="top" secondItem="lR7-RN-Dl1" secondAttribute="bottom" constant="5" id="ATb-v4-h74"/>
                 <constraint firstItem="lR7-RN-Dl1" firstAttribute="top" secondItem="yNF-LX-XgD" secondAttribute="bottom" constant="5" id="S0f-iA-TJR"/>
                 <constraint firstItem="gNe-Av-LwQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="TQG-7P-zEO"/>
                 <constraint firstAttribute="trailing" secondItem="yNF-LX-XgD" secondAttribute="trailing" constant="8" id="U5D-vf-Rzz"/>
-                <constraint firstAttribute="bottom" secondItem="GeW-On-hTN" secondAttribute="bottom" id="ZVf-Zf-saz"/>
-                <constraint firstItem="GeW-On-hTN" firstAttribute="leading" secondItem="lR7-RN-Dl1" secondAttribute="leading" id="nDb-0E-KOy"/>
+                <constraint firstAttribute="bottom" secondItem="Ij7-hg-zGw" secondAttribute="bottom" id="WQ1-z7-AhH"/>
+                <constraint firstItem="Ij7-hg-zGw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="48" id="bk0-dI-086"/>
+                <constraint firstAttribute="trailing" secondItem="Ij7-hg-zGw" secondAttribute="trailing" id="eT3-ws-r1Y"/>
                 <constraint firstItem="gNe-Av-LwQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="vKq-Pw-e14"/>
                 <constraint firstItem="lR7-RN-Dl1" firstAttribute="leading" secondItem="yNF-LX-XgD" secondAttribute="leading" id="vfG-UT-R3y"/>
-                <constraint firstAttribute="trailing" secondItem="GeW-On-hTN" secondAttribute="trailing" constant="8" id="xe3-LT-ntz"/>
                 <constraint firstItem="yNF-LX-XgD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="xyO-mD-oLT"/>
             </constraints>
             <size key="customSize" width="333" height="81"/>
@@ -91,6 +110,8 @@
                 <outlet property="dateCommentLabel" destination="G4v-YU-2u1" id="ABz-3n-gDD"/>
                 <outlet property="fullNameLabel" destination="yNF-LX-XgD" id="O6J-ex-SwG"/>
                 <outlet property="heartImageView" destination="xB7-p2-X9M" id="UtR-dB-VLC"/>
+                <outlet property="heatImageOptinalTrailingConstraint" destination="3Dg-29-vQO" id="6Ud-5q-Euk"/>
+                <outlet property="heatImageTrailingConstraint" destination="KPm-Lt-lBs" id="57G-mk-E53"/>
                 <outlet property="profileImageView" destination="gNe-Av-LwQ" id="Jhc-22-ame"/>
                 <outlet property="replyButton" destination="m5v-ln-bQS" id="S2p-gV-Pfe"/>
                 <outlet property="textCommentLabel" destination="lR7-RN-Dl1" id="Nb3-lD-Ka2"/>
@@ -101,11 +122,11 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

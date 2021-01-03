@@ -15,18 +15,16 @@ class PostOnlyTextCellViewModel: VKReaderViewModelCell {
     var item: CommentItem
     var profile: CommentProfile
     var text: String
-    var likeCounts: Int
-//    var commentsCount: Int
-//    var viewsCount: Int
+    var commentsCount: Int
+    var dateCreateComment: Double
     
     
     init(with item: CommentItem, and profile: CommentProfile) {
         self.item = item
         self.profile = profile
         self.text = item.text ?? ""
-        self.likeCounts = item.likes?.count ?? 0
-//        self.commentsCount = item.comments?.count ?? 0
-//        self.viewsCount = item.views?.count ?? 0
+        self.commentsCount = item.likes?.count ?? 0
+        self.dateCreateComment = Double(item.date ?? 0)
     }
     
     func cellIdentifier() -> String {
@@ -52,6 +50,19 @@ class PostOnlyTextCellViewModel: VKReaderViewModelCell {
             dynamicHeight = value
         }
     }
+    
+  
+    func formatDate(from unixTime: Double) -> String {
+        let date = Date(timeIntervalSince1970: unixTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_Ru")
+        dateFormatter.dateStyle = .medium
+        let dateAsString = dateFormatter.string(from: date as Date)
+        let dateFromString = dateFormatter.date(from: dateAsString)
+        let dateCreateComment = dateFormatter.string(from: dateFromString! )
+        return dateCreateComment
+    }
+    
     func formatNumber(_ n: Int) -> String {
         let num = abs(Double(n))
         let sign = (n < 0) ? "-" : ""

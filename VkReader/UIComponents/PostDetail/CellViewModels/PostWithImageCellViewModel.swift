@@ -33,13 +33,14 @@ class PostWithImageCellViewModel: VKReaderViewModelCell {
     var imageHeigth: CGFloat
     var imageWidth: CGFloat
     var text: String
+    var likeCounts: Int
 
     
     init(with item: CommentItem, and profile: CommentProfile) {
         self.item = item
         self.profile = profile
         self.text = item.text ?? ""
-
+        self.likeCounts = item.likes?.count ?? 0
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""
         self.imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
         self.imageWidth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.width ?? 0) / UIScreen.main.scale

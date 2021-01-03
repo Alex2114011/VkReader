@@ -15,6 +15,9 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
     @IBOutlet weak var replyButton: UIButton!
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var heatImageTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heatImageOptinalTrailingConstraint: NSLayoutConstraint!
+    
     
     var profileImageTask: URLSessionDataTask?
     var model: PostOnlyTextCellViewModel?
@@ -28,10 +31,21 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
     func configure(with object: VKReaderViewModelCell) {
         guard let model = object as? PostOnlyTextCellViewModel else { return }
         self.model = model
-        print("Model \(model.profile.firstName)")
-        textCommentLabel.text = model.text
-        commentCountLabel.text = model.formatNumber(model.likeCounts)
-        fullNameLabel.text = ("\(model.profile.firstName ?? "") \(model.profile.lastName ?? "") ")
+        self.textCommentLabel.text = model.text
+        self.commentCountLabel.text = "\(model.formatNumber(model.commentsCount))"
+        self.fullNameLabel.text = ("\(model.profile.firstName ?? "") \(model.profile.lastName ?? "") ")
+        self.dateCommentLabel.text = model.formatDate(from: model.dateCreateComment)
+        if let countlike = model.item.likes?.count {
+            if countlike == 0{
+                commentCountLabel.isHidden = true
+                heatImageTrailingConstraint.priority = UILayoutPriority(rawValue: 1)
+                heatImageOptinalTrailingConstraint.priority = UILayoutPriority(rawValue: 1000)
+            } else{
+                commentCountLabel.isHidden = false
+                heatImageTrailingConstraint.priority = UILayoutPriority(rawValue: 1000)
+                heatImageOptinalTrailingConstraint.priority = UILayoutPriority(rawValue: 1)
+            }
+        }
         if let url = NSURL(string: model.profile.photo50 ?? "") {
             profileImageTask = ImageCache.shared.load(url: url, callback: { [weak self] (image) in
                 guard let self = self else { return }

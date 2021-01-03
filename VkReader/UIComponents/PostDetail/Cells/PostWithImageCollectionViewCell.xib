@@ -18,6 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="333" height="165"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yD-TT-tSR">
+                        <rect key="frame" x="0.0" y="0.0" width="333" height="165"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DO4-gz-R3y">
                         <rect key="frame" x="8" y="8.5" width="35" height="34"/>
                         <constraints>
@@ -68,15 +72,17 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="books.vertical.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pFx-5V-Mcj">
-                        <rect key="frame" x="50" y="53" width="116" height="79"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="books.vertical.fill" catalog="system" id="pFx-5V-Mcj">
+                        <rect key="frame" x="49" y="53" width="117" height="79"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="2yD-TT-tSR" secondAttribute="trailing" id="4uD-3S-4t3"/>
                 <constraint firstAttribute="bottom" secondItem="uX4-Rj-pi3" secondAttribute="bottom" id="55A-ZC-XfC"/>
+                <constraint firstItem="2yD-TT-tSR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8fn-us-MJm"/>
                 <constraint firstItem="NDj-uH-fEa" firstAttribute="leading" secondItem="DO4-gz-R3y" secondAttribute="trailing" constant="5" id="Gfe-Ns-sRT"/>
                 <constraint firstAttribute="trailing" secondItem="uX4-Rj-pi3" secondAttribute="trailing" constant="8" id="H51-AD-iNB"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="sbM-wk-T8T" secondAttribute="trailing" constant="8" id="U2e-Se-lgq"/>
@@ -86,9 +92,21 @@
                 <constraint firstItem="sbM-wk-T8T" firstAttribute="leading" secondItem="NDj-uH-fEa" secondAttribute="leading" id="agh-xH-MyF"/>
                 <constraint firstItem="uX4-Rj-pi3" firstAttribute="leading" secondItem="sbM-wk-T8T" secondAttribute="leading" id="euX-sl-sHM"/>
                 <constraint firstItem="DO4-gz-R3y" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fFY-Xs-ZWz"/>
+                <constraint firstAttribute="bottom" secondItem="2yD-TT-tSR" secondAttribute="bottom" id="fJR-XB-ixb"/>
+                <constraint firstItem="2yD-TT-tSR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qPS-zB-qFc"/>
                 <constraint firstItem="sbM-wk-T8T" firstAttribute="top" secondItem="NDj-uH-fEa" secondAttribute="bottom" constant="5" id="yCl-B0-vp0"/>
             </constraints>
             <size key="customSize" width="333" height="165"/>
+            <connections>
+                <outlet property="commentCountLabel" destination="OzO-W5-ne2" id="F1k-Dy-ol8"/>
+                <outlet property="dateCommentLabel" destination="yIQ-Gi-AKl" id="LRI-XH-nkt"/>
+                <outlet property="fullNameLabel" destination="NDj-uH-fEa" id="SGh-BW-ytu"/>
+                <outlet property="heartImageView" destination="bOw-l3-3SI" id="hN4-HC-IRM"/>
+                <outlet property="imageView" destination="pFx-5V-Mcj" id="NQR-Fg-zca"/>
+                <outlet property="profileImageView" destination="DO4-gz-R3y" id="Kgk-Wl-q6I"/>
+                <outlet property="replyButton" destination="V37-1n-CAY" id="voU-YK-Y92"/>
+                <outlet property="textCommentLabel" destination="sbM-wk-T8T" id="nAU-gc-5Mj"/>
+            </connections>
             <point key="canvasLocation" x="-83.333333333333343" y="126.89732142857142"/>
         </collectionViewCell>
     </objects>
@@ -96,6 +114,9 @@
         <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

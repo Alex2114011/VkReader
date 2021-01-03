@@ -41,11 +41,10 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     }
     
     func getComment() {
-        commentService.getComments(for: postIdentifier, count: 100, with: 0) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, count: 10, with: 0) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
-                print(#function , dto)
                 var models: [VKReaderViewModelCell] = []
                 guard let profiles = dto.response?.profiles else { return }
                 for item in (dto.response?.items ?? []) {
@@ -69,13 +68,14 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     
     func nextComment() {
         guard let readerSection = sections.first else { return }
-        commentService.getComments(count: 100, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, count: 100, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
                 var models: [VKReaderViewModelCell] = []
                 guard let profiles = dto.response?.profiles else { return }
                 for item in dto.response?.items ?? []{
+                    print("CommentsCount \(item.likes?.count)")
                    let _profile = profiles.first{ (prof) -> Bool in
                         return prof.id == item.fromID
                     }
@@ -106,53 +106,3 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     }
     
 }
-
-
-//protocol PostDetailViewModel {
-//
-//}
-//
-//class PostDetailViewModelImpl: PostDetailViewModel{
-//
-//    let commentsService: CommentsService
-//
-//    init(commentsService: CommentsService) {
-//        self.commentsService = commentsService
-//    }
-//
-//    func getComments(){
-//        commentsService.getComments(count: 100, with: 0) { (result) in
-//            switch result{
-//            case .success(let dto):
-//                guard let comments = dto.response?.items else {return}
-//                print(dto.response?.items)
-//            case .failure(let error):
-//                print(error?.localizedDescription ?? "")
-//            }
-//        }
-//    }
-//
-//
-//
-//
-//
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//}
