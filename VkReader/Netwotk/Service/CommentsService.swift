@@ -13,13 +13,7 @@ protocol CommentsService {
 }
 
 class CommentsServiceImpl: CommentsService{
-    var postID:Int = 0 {
-        didSet{
-            print("CommentsServiceImpl OLD \(oldValue)")
-        } willSet{
-            print("CommentsServiceImpl NEW \(newValue)")
-        }
-    }
+    var postID:Int = 0 
     let sort = ""
     
     fileprivate let ownerID: String = "-65662695" // группа с длинными постами -83978073 и с маленькими  -65662695

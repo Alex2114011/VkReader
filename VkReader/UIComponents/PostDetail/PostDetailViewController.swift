@@ -57,7 +57,6 @@ class PostDetailViewController: BaseController {
 
 extension PostDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("количество секций  \(viewModel.sections.count)")
         return viewModel.sections.count
     }
     
@@ -67,7 +66,6 @@ extension PostDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
-        print("Какая ячейка будет выбрана \(item)")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.cellIdentifier(), for: indexPath) as! VKReaderAbstractCell
         cell.setupUI()
         cell.set(delegate: self)
@@ -99,11 +97,6 @@ extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
 
 extension PostDetailViewController: VKReaderAbstractCellDelegate {
     func passImage(image: UIImage) {
-//        let vc = DetailImageViewController(image: image)
-//        print(image)
-//        vc.modalPresentationStyle = .custom
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true, completion: nil)
     }
         
     func relayout() {

@@ -58,7 +58,6 @@ class FeedViewController: BaseController {
 
 extension FeedViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("количество секций в ленте \(viewModel.sections.count)")
         return viewModel.sections.count
     }
     
@@ -105,7 +104,6 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 extension FeedViewController: VKReaderAbstractCellDelegate {
     func passImage(image: UIImage) {
         let vc = DetailImageViewController(image: image)
-        print(image)
         vc.modalPresentationStyle = .custom
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)

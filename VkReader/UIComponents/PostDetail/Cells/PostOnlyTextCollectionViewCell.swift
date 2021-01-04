@@ -27,6 +27,11 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
         contentView.backgroundColor = .white
         profileImageView.layer.cornerRadius = 15
         textCommentLabel.backgroundColor = .gray
+        let paragraphStyle = NSMutableParagraphStyle()
+        let font = UIFont.systemFont(ofSize: 13)
+        paragraphStyle.lineSpacing = 1.12
+        let attributedString = NSAttributedString(string: model?.text ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle , NSAttributedString.Key.font: font])
+        textCommentLabel.attributedText = attributedString
     }
     
     func configure(with object: VKReaderViewModelCell) {
@@ -54,7 +59,7 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
             })
             profileImageTask?.resume()
         }
-        let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
+        let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
         self.model?.change(height: textHeigth + 81)
     }
     

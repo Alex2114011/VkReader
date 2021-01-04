@@ -75,7 +75,6 @@ class PostDetailViewModelImpl: PostDetailViewModel {
                 var models: [VKReaderViewModelCell] = []
                 guard let profiles = dto.response?.profiles else { return }
                 for item in dto.response?.items ?? []{
-                    print("CommentsCount \(item.likes?.count)")
                    let _profile = profiles.first{ (prof) -> Bool in
                         return prof.id == item.fromID
                     }

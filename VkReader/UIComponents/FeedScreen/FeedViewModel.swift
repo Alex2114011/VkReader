@@ -48,7 +48,6 @@ class FeedViewModelImpl: FeedViewModel{
             guard let self = self else { return }
             switch result {
             case .success(let dto):
-                print(dto)
                 var models: [VKReaderViewModelCell] = []
                 guard let group = dto.response?.groups?.first else { return }
                 dto.response?.items?.forEach({
@@ -60,7 +59,6 @@ class FeedViewModelImpl: FeedViewModel{
                 self.delegate?.reloadData()
                 dto.response?.items?.forEach({ (result) in
                     self.postsId.append(result.id ?? 0)
-                    print("!postsId \(self.postsId)")
                 })
             case .failure(let error):
                 print(error?.localizedDescription ?? "")
@@ -81,7 +79,6 @@ class FeedViewModelImpl: FeedViewModel{
                 })
                 dto.response?.items?.forEach({ (result) in
                     self.postsId.append(result.id ?? 0)
-                    print("!postsId \(self.postsId)")
                 })
                 if let readerSection = self.sections.first as? VKReaderSection {
                     let startIndexPath = IndexPath(row: readerSection.cellsViewModel.count - 1, section: 0)
@@ -98,7 +95,6 @@ class FeedViewModelImpl: FeedViewModel{
     func getPostID(indexPath: Int) -> Int {
         let postID = self.postsId[indexPath]
         commentService.postID = postID
-        print("!postsId \(postID)")
         return postID
     }
     

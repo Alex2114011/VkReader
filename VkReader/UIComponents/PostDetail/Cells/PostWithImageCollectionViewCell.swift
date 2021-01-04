@@ -32,7 +32,6 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
     func configure(with object: VKReaderViewModelCell) {
         guard let model = object as? PostWithImageCellViewModel else { return }
         self.model = model
-        print("Model \(model.profile.firstName)")
         textCommentLabel.text = model.text
         commentCountLabel.text = model.formatNumber(model.likeCounts)
         fullNameLabel.text = ("\(model.profile.firstName ?? "") \(model.profile.lastName ?? "") ")
