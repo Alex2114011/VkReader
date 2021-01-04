@@ -17,16 +17,23 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var heatImageTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heatImageOptinalTrailingConstraint: NSLayoutConstraint!
     
     var profileImageTask: URLSessionDataTask?
     var model: PostWithImageCellViewModel?
     var imageTask: URLSessionDataTask?
+    
     weak var delegate: VKReaderAbstractCellDelegate?
     
     func setupUI() {
         contentView.backgroundColor = .white
         profileImageView.layer.cornerRadius = 15
+        let paragraphStyle = NSMutableParagraphStyle()
+        let font = UIFont.systemFont(ofSize: 13)
+        paragraphStyle.lineSpacing = 1.12
+        let attributedString = NSAttributedString(string: model?.text ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle , NSAttributedString.Key.font: font])
+        textCommentLabel.attributedText = attributedString
     }
     
     func configure(with object: VKReaderViewModelCell) {
@@ -35,6 +42,9 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
         textCommentLabel.text = model.text
         commentCountLabel.text = model.formatNumber(model.likeCounts)
         fullNameLabel.text = ("\(model.profile.firstName ?? "") \(model.profile.lastName ?? "") ")
+        self.dateCommentLabel.text = model.formatDate(from: model.dateCreateComment)
+        let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
+        self.model?.change(height: textHeigth + 170)
         if let url = NSURL(string: model.profile.photo50 ?? "") {
             profileImageTask = ImageCache.shared.load(url: url, callback: { [weak self] (image) in
                 guard let self = self else { return }

@@ -116,7 +116,7 @@
                 <outlet property="replyButton" destination="m5v-ln-bQS" id="S2p-gV-Pfe"/>
                 <outlet property="textCommentLabel" destination="lR7-RN-Dl1" id="Nb3-lD-Ka2"/>
             </connections>
-            <point key="canvasLocation" x="342.75362318840581" y="162.38839285714286"/>
+            <point key="canvasLocation" x="307" y="20"/>
         </collectionViewCell>
     </objects>
     <resources>

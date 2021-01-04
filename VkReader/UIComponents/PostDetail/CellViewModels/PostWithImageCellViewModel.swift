@@ -6,22 +6,8 @@
 //
 
 import UIKit
-/// создаем секции
-//class VKReaderSection: VKReaderSectionModel {
-//    var title: String = ""
-//
-//    var headerHeight: CGFloat = 0
-//
-//    var sortRate: Int = 0
-//
-//    var cellsViewModel: [VKReaderViewModelCell] = []
-//
-//    func headerIdentifier() -> String {
-//        return ""
-//    }
-    
+// создаем секции
 
-//}
 /// модель для ячейки с картинкой
 class PostWithImageCellViewModel: VKReaderViewModelCell {
     
@@ -34,13 +20,15 @@ class PostWithImageCellViewModel: VKReaderViewModelCell {
     var imageWidth: CGFloat
     var text: String
     var likeCounts: Int
+    var dateCreateComment: Double
 
     
     init(with item: CommentItem, and profile: CommentProfile) {
         self.item = item
         self.profile = profile
-        self.text = item.text ?? ""
+        self.text = "Ну че? Нормально? текст ни на кого не наезжает ,накатал чтоб высоту заценить, но если все норм листай дальше" //item.text ?? ""
         self.likeCounts = item.likes?.count ?? 0
+        self.dateCreateComment = Double(item.date ?? 0)
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""
         self.imageHeigth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.height ?? 0) / UIScreen.main.scale
         self.imageWidth = CGFloat(item.attachments?.first?.photo?.sizes?.last?.width ?? 0) / UIScreen.main.scale
@@ -75,6 +63,17 @@ class PostWithImageCellViewModel: VKReaderViewModelCell {
         if dynamicHeight == 0 {
             dynamicHeight = value
         }
+    }
+    
+    func formatDate(from unixTime: Double) -> String {
+        let date = Date(timeIntervalSince1970: unixTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_Ru")
+        dateFormatter.dateStyle = .medium
+        let dateAsString = dateFormatter.string(from: date as Date)
+        let dateFromString = dateFormatter.date(from: dateAsString)
+        let dateCreateComment = dateFormatter.string(from: dateFromString! )
+        return dateCreateComment
     }
     
     func formatNumber(_ n: Int) -> String {

@@ -17,16 +17,15 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var heatImageTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var heatImageOptinalTrailingConstraint: NSLayoutConstraint!
-    
-    
+        
     var profileImageTask: URLSessionDataTask?
     var model: PostOnlyTextCellViewModel?
+   
     weak var delegate: VKReaderAbstractCellDelegate?
     
     func setupUI() {
         contentView.backgroundColor = .white
         profileImageView.layer.cornerRadius = 15
-        textCommentLabel.backgroundColor = .gray
         let paragraphStyle = NSMutableParagraphStyle()
         let font = UIFont.systemFont(ofSize: 13)
         paragraphStyle.lineSpacing = 1.12

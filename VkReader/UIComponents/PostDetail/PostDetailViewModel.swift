@@ -68,7 +68,7 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     
     func nextComment() {
         guard let readerSection = sections.first else { return }
-        commentService.getComments(for: postIdentifier, count: 100, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, count: 10, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
