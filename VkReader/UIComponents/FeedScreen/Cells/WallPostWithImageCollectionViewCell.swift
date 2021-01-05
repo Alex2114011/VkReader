@@ -66,7 +66,7 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         }
         imageTask?.resume()
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
-        self.model?.change(height: textHeigth + 99 + model.imageHeigth)
+        self.model?.change(height: textHeigth + 105 + model.imageHeigth)
         imageWidthConstraint.constant = model.imageWidth
         imageHeightConstraint.constant = model.imageHeigth
         delegate?.relayout()

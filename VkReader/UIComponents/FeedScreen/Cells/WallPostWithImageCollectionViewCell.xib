@@ -157,7 +157,7 @@
                 <outlet property="viewsCountLabel" destination="3au-Bn-nQS" id="PTg-rM-wkB"/>
                 <outlet property="viewsImageView" destination="SZA-r8-jox" id="gGs-tB-eZe"/>
             </connections>
-            <point key="canvasLocation" x="-136.23188405797103" y="102.79017857142857"/>
+            <point key="canvasLocation" x="-136.23188405797103" y="102.45535714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
