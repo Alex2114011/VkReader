@@ -25,6 +25,11 @@ class WallPostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstract
     func setupUI() {
         contentView.backgroundColor = .white
         groupImageView.layer.cornerRadius = 15
+        let paragraphStyle = NSMutableParagraphStyle()
+        let font = UIFont.systemFont(ofSize: 15)
+        paragraphStyle.lineSpacing = 1.12
+        let attributedString = NSAttributedString(string: model?.text ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle , NSAttributedString.Key.font: font])
+        postLabel.attributedText = attributedString
     }
     
     func configure(with object: VKReaderViewModelCell) {

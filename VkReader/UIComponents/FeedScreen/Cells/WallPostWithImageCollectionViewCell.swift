@@ -37,6 +37,11 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         groupImageView.layer.cornerRadius = 15
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
+        let paragraphStyle = NSMutableParagraphStyle()
+        let font = UIFont.systemFont(ofSize: 15)
+        paragraphStyle.lineSpacing = 1.12
+        let attributedString = NSAttributedString(string: model?.text ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle , NSAttributedString.Key.font: font])
+        postLabel.attributedText = attributedString
     }
     
     func configure(with object: VKReaderViewModelCell) {
@@ -61,7 +66,7 @@ class WallPostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstrac
         }
         imageTask?.resume()
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 20, font: UIFont.systemFont(ofSize: 15))
-        self.model?.change(height: textHeigth + 150 + model.imageHeigth)
+        self.model?.change(height: textHeigth + 99 + model.imageHeigth)
         imageWidthConstraint.constant = model.imageWidth
         imageHeightConstraint.constant = model.imageHeigth
         delegate?.relayout()
