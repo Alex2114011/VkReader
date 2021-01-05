@@ -32,6 +32,8 @@ class PostDetailViewController: BaseController {
         super.viewDidLoad()
         viewModel.getComment()
         setupUI()
+        swipes()
+        goBackButton()
     }
     
     func setupUI() {
@@ -46,6 +48,27 @@ class PostDetailViewController: BaseController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    func swipes(){
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeToDismiss))
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func swipeToDismiss(sender :UISwipeGestureRecognizer){
+        if sender.direction == .right {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func goBackButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(navigateToFeedVC(parameter:)))
+    }
+    
+    @objc func navigateToFeedVC(parameter: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: nil) //Отклоняет контроллер, который был представлен контроллером представления модально.
+    }
+    
     
     func registerCells() {
         collectionView.register(UINib(nibName: String(describing: WallPostOnlyTextCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: WallPostOnlyTextCollectionViewCell.self))
