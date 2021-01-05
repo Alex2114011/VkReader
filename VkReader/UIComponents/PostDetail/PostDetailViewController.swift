@@ -120,6 +120,10 @@ extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
 
 extension PostDetailViewController: VKReaderAbstractCellDelegate {
     func passImage(image: UIImage) {
+        let vc = DetailImageViewController(image: image)
+        vc.modalPresentationStyle = .custom
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true, completion: nil)
     }
         
     func relayout() {

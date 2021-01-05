@@ -27,6 +27,9 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
     weak var delegate: VKReaderAbstractCellDelegate?
     
     func setupUI() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImage(sender:)))
+        imageView.addGestureRecognizer(tapRecognizer)
+        imageView.isUserInteractionEnabled = true
         contentView.backgroundColor = .white
         profileImageView.layer.cornerRadius = 15
         let paragraphStyle = NSMutableParagraphStyle()
@@ -71,5 +74,9 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
         imageTask?.cancel()
         imageTask = nil
     }
+    @objc func presentImage(sender: UITapGestureRecognizer){
+        guard let image = imageView.image else {return}
+        self.delegate?.passImage(image: image)
 
+    }
 }
