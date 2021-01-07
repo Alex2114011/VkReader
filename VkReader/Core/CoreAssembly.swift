@@ -21,5 +21,7 @@ class CoreAssembly {
     lazy var wallService: WallService = WallServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
     
     lazy var commentsService: CommentsService = CommentsServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
+    
+    lazy var commetnsThreatService: CommentsThreadService = CommentsThreadServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
 }
 

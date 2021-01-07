@@ -24,6 +24,7 @@
 		FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB09256D1F8100A645EE /* WallDTO.swift */; };
 		FA61FB15256D631500A645EE /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB14256D631500A645EE /* WallService.swift */; };
 		FA61FB18256D802600A645EE /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB17256D802600A645EE /* URLProvider.swift */; };
+		FA643BFF25A4B69D00024BF8 /* CommentsThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */; };
 		FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7714AC2564195C00FB51E7 /* LoginViewController.swift */; };
 		FA7714AF2564195C00FB51E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7714AD2564195C00FB51E7 /* LoginViewController.xib */; };
 		FA8488052565AF51003F841A /* CorePresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8488042565AF51003F841A /* CorePresentationAssembly.swift */; };
@@ -76,6 +77,7 @@
 		FA61FB09256D1F8100A645EE /* WallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDTO.swift; sourceTree = "<group>"; };
 		FA61FB14256D631500A645EE /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
 		FA61FB17256D802600A645EE /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
+		FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsThreadService.swift; sourceTree = "<group>"; };
 		FA7714AC2564195C00FB51E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA7714AD2564195C00FB51E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FA8488042565AF51003F841A /* CorePresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorePresentationAssembly.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				FA61FB14256D631500A645EE /* WallService.swift */,
 				FABCDC8F258B8B8C00457103 /* CommentsService.swift */,
+				FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				FAF2A23B2574E9580030F63D /* WallPostWithImageCellViewModel.swift in Sources */,
 				F5B4CEC42562BBD500B5D6BD /* BaseNetworkService.swift in Sources */,
 				F5AD1BDB255EB72D005BD999 /* OAuthWebViewController.swift in Sources */,
+				FA643BFF25A4B69D00024BF8 /* CommentsThreadService.swift in Sources */,
 				FABCDC93258BDE0A00457103 /* CommentsDTO.swift in Sources */,
 				F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */,
 				F5AD1BEF255EC716005BD999 /* String+Extensions.swift in Sources */,

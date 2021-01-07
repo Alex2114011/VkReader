@@ -73,7 +73,7 @@ class BaseNetworkServiceImpl: BaseNetworkService {
             
             DispatchQueue.main.async {
                 callback(.success(jsonModel))
-                
+                print("JSON \(jsonModel)")
             }
         }.resume()
         

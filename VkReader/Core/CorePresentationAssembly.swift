@@ -55,7 +55,7 @@ class CorePresentationAssembly {
     }
     
     func postDetailViewController(with postModel: VKReaderViewModelCell, for postID: Int) -> UIViewController {
-        let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService, postViewModel: postModel, postIdentifier: postID)
+        let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService, postViewModel: postModel, postIdentifier: postID, commentsThreadService: coreAssembly.commetnsThreatService)
        
         let vc = PostDetailViewController(viewModel: vm)
         let navigationController = UINavigationController(rootViewController: vc)
