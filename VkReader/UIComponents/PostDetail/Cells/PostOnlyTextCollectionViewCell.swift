@@ -59,7 +59,8 @@ class PostOnlyTextCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell
             profileImageTask?.resume()
         }
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
-        self.model?.change(height: textHeigth + 81)
+        self.model?.change(height: textHeigth + 65)
+        delegate?.relayout()
     }
     
     func set(delegate: VKReaderAbstractCellDelegate) {

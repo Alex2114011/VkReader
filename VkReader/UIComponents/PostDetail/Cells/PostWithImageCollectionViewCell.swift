@@ -46,8 +46,6 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
         commentCountLabel.text = model.formatNumber(model.likeCounts)
         fullNameLabel.text = ("\(model.profile.firstName ?? "") \(model.profile.lastName ?? "") ")
         self.dateCommentLabel.text = model.formatDate(from: model.dateCreateComment)
-        let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
-        self.model?.change(height: textHeigth + 170)
         if let url = NSURL(string: model.profile.photo50 ?? "") {
             profileImageTask = ImageCache.shared.load(url: url, callback: { [weak self] (image) in
                 guard let self = self else { return }
@@ -61,6 +59,10 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
             self.imageView.image = image
         }
         imageTask?.resume()
+        
+        let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
+        self.model?.change(height: textHeigth + 170)
+        delegate?.relayout()
     }
     
     func set(delegate: VKReaderAbstractCellDelegate) {
