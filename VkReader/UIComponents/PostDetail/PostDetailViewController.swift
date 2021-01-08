@@ -38,7 +38,7 @@ class PostDetailViewController: BaseController {
     
     func setupUI() {
         view.addSubview(collectionView)
-        collectionView.backgroundColor = UIColor(red: 1/230, green: 1/233, blue: 1/237, alpha: 0.07)
+        collectionView.backgroundColor = .white //UIColor(red: 1/230, green: 1/233, blue: 1/237, alpha: 0.07)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true

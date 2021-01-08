@@ -26,7 +26,7 @@ class PostWithImageCellViewModel: VKReaderViewModelCell {
     init(with item: CommentItem, and profile: CommentProfile) {
         self.item = item
         self.profile = profile
-        self.text = "Ну че? Нормально? текст ни на кого не наезжает ,накатал чтоб высоту заценить, но если все норм листай дальше" //item.text ?? ""
+        self.text = item.text ?? ""
         self.likeCounts = item.likes?.count ?? 0
         self.dateCreateComment = Double(item.date ?? 0)
         self.imageURLString = item.attachments?.first?.photo?.sizes?.last?.url ?? ""

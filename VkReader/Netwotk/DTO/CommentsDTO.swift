@@ -33,7 +33,7 @@ struct CommentResponse: Codable {
 // MARK: - Item
 struct CommentItem: Codable {
     let id, fromID, postID, ownerID: Int?
-//    let parentsStack: [JSONAny]
+    let parentsStack: [Int]?
     let date: Int?
     let text: String?
     let likes: CommentLikes?
@@ -45,7 +45,7 @@ struct CommentItem: Codable {
         case fromID = "from_id"
         case postID = "post_id"
         case ownerID = "owner_id"
-//        case parentsStack = "parents_stack"
+        case parentsStack = "parents_stack"
         case date, text, likes, attachments, thread
     }
 }
@@ -98,11 +98,11 @@ struct CommentLikes: Codable {
 // MARK: - Thread
 struct CommentThread: Codable {
     let count: Int?
-//    let items: [JSONAny]
+    let items: [CommentItem]?
     let canPost, showReplyButton, groupsCanPost: Bool?
 
     enum CodingKeys: String, CodingKey {
-        case count//, items
+        case count, items
         case canPost = "can_post"
         case showReplyButton = "show_reply_button"
         case groupsCanPost = "groups_can_post"
