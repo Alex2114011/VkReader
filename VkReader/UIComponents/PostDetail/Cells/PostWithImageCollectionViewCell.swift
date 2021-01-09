@@ -61,7 +61,7 @@ class PostWithImageCollectionViewCell: UICollectionViewCell, VKReaderAbstractCel
         imageTask?.resume()
         
         let textHeigth = model.text.height(withConstrainedWidth: UIScreen.main.bounds.width - 48, font: UIFont.systemFont(ofSize: 13))
-        self.model?.change(height: textHeigth + 170)
+        self.model?.change(height: textHeigth + 154)
         delegate?.relayout()
     }
     
