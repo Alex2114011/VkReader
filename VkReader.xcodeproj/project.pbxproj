@@ -45,6 +45,8 @@
 		FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */; };
 		FACFBED425AB4473008018BA /* AccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED325AB4473008018BA /* AccountDTO.swift */; };
 		FACFBED725AB44E0008018BA /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED625AB44E0008018BA /* AccountService.swift */; };
+		FACFBEDA25AB4E98008018BA /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED925AB4E98008018BA /* GroupService.swift */; };
+		FACFBEDD25AB4FD5008018BA /* GroupsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEDC25AB4FD5008018BA /* GroupsDTO.swift */; };
 		FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */; };
 		FAD936E2259A243600A7F921 /* PostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */; };
 		FAF1380325989ADA000B00F5 /* PostWithImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */; };
@@ -102,6 +104,8 @@
 		FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FACFBED325AB4473008018BA /* AccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDTO.swift; sourceTree = "<group>"; };
 		FACFBED625AB44E0008018BA /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		FACFBED925AB4E98008018BA /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
+		FACFBEDC25AB4FD5008018BA /* GroupsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDTO.swift; sourceTree = "<group>"; };
 		FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCellViewModel.swift; sourceTree = "<group>"; };
@@ -197,9 +201,10 @@
 		FA61FB08256D1F6A00A645EE /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FACFBED325AB4473008018BA /* AccountDTO.swift */,
+				FACFBEDC25AB4FD5008018BA /* GroupsDTO.swift */,
 				FA61FB09256D1F8100A645EE /* WallDTO.swift */,
 				FABCDC92258BDE0A00457103 /* CommentsDTO.swift */,
-				FACFBED325AB4473008018BA /* AccountDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				FA61FB14256D631500A645EE /* WallService.swift */,
 				FACFBED625AB44E0008018BA /* AccountService.swift */,
 				FABCDC8F258B8B8C00457103 /* CommentsService.swift */,
+				FACFBED925AB4E98008018BA /* GroupService.swift */,
 				FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */,
 			);
 			path = Service;
@@ -442,6 +448,7 @@
 				FABCDC90258B8B8C00457103 /* CommentsService.swift in Sources */,
 				FABC743E2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.swift in Sources */,
 				FAF1380625989AF7000B00F5 /* PostOnlyTextCellViewModel.swift in Sources */,
+				FACFBEDA25AB4E98008018BA /* GroupService.swift in Sources */,
 				FA849B78257E1F4E00FCFEE1 /* DetailImageViewController.swift in Sources */,
 				FA61FB15256D631500A645EE /* WallService.swift in Sources */,
 				FAF2A23B2574E9580030F63D /* WallPostWithImageCellViewModel.swift in Sources */,
@@ -454,6 +461,7 @@
 				FABC74392566BB4800ABDA0A /* WallPostWithImageCollectionViewCell.swift in Sources */,
 				FAF1380F25989DA0000B00F5 /* PostDetailViewController.swift in Sources */,
 				F5AD1BD7255C06CF005BD999 /* FirstExampleNetworkRequest.swift in Sources */,
+				FACFBEDD25AB4FD5008018BA /* GroupsDTO.swift in Sources */,
 				FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */,
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
 				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,

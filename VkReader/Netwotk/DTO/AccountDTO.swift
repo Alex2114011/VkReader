@@ -9,16 +9,16 @@ import Foundation
 
 // MARK: - Account
 struct AccountDTO: Codable {
-    let response: Response
+    let response: AccountResponse
 }
 
 // MARK: - Response
-struct Response: Codable {
+struct AccountResponse: Codable {
     let firstName: String?
     let id: Int?
     let lastName, homeTown, status, bdate: String?
     let bdateVisibility: Int?
-    let city, country: City
+    let city, country: AccountCity
     let phone: String?
     let relation, sex: Int?
 
@@ -34,7 +34,7 @@ struct Response: Codable {
 }
 
 // MARK: - City
-struct City: Codable {
+struct AccountCity: Codable {
     let id: Int?
     let title: String?
 }
