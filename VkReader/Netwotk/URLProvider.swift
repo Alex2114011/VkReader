@@ -10,10 +10,15 @@ import Foundation
 protocol URLProvider {
     var wallGet:URL {get}
     var commentsGet:URL {get}
+    var accountGetProfileInfo: URL {get}
 }
 
 /// реализация требований протокола в которой переменной присваивается метод апи
 class URLProviderImpl: URLProvider {
+    var accountGetProfileInfo: URL {
+        return URL(string: "account.getProfileInfo")!
+    }
+    
     var wallGet: URL {
         return URL(string: "wall.get")!
     }

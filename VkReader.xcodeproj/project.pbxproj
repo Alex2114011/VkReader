@@ -43,6 +43,8 @@
 		FACEF4E2255ADE3B00E373FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACEF4E0255ADE3B00E373FE /* LaunchScreen.storyboard */; };
 		FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4F6255ADEEF00E373FE /* DataModel.swift */; };
 		FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */; };
+		FACFBED425AB4473008018BA /* AccountDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED325AB4473008018BA /* AccountDTO.swift */; };
+		FACFBED725AB44E0008018BA /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED625AB44E0008018BA /* AccountService.swift */; };
 		FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */; };
 		FAD936E2259A243600A7F921 /* PostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */; };
 		FAF1380325989ADA000B00F5 /* PostWithImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */; };
@@ -98,6 +100,8 @@
 		FACEF4E3255ADE3B00E373FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FACEF4F6255ADEEF00E373FE /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FACEF4FA255ADFBC00E373FE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FACFBED325AB4473008018BA /* AccountDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDTO.swift; sourceTree = "<group>"; };
+		FACFBED625AB44E0008018BA /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCellViewModel.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			children = (
 				FA61FB09256D1F8100A645EE /* WallDTO.swift */,
 				FABCDC92258BDE0A00457103 /* CommentsDTO.swift */,
+				FACFBED325AB4473008018BA /* AccountDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				FA61FB14256D631500A645EE /* WallService.swift */,
+				FACFBED625AB44E0008018BA /* AccountService.swift */,
 				FABCDC8F258B8B8C00457103 /* CommentsService.swift */,
 				FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */,
 			);
@@ -454,10 +460,12 @@
 				FABCDC8C258B85BA00457103 /* PostDetailViewModel.swift in Sources */,
 				FAF1380B25989C03000B00F5 /* PostOnlyTextCollectionViewCell.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */,
+				FACFBED425AB4473008018BA /* AccountDTO.swift in Sources */,
 				F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */,
 				FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */,
 				FACEF4F7255ADEEF00E373FE /* DataModel.swift in Sources */,
 				F5AD1BEB255EC64F005BD999 /* KeyConstants.swift in Sources */,
+				FACFBED725AB44E0008018BA /* AccountService.swift in Sources */,
 				F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */,
 				F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */,
 			);

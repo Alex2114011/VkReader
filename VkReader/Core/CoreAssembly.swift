@@ -23,5 +23,7 @@ class CoreAssembly {
     lazy var commentsService: CommentsService = CommentsServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
     
     lazy var commetnsThreatService: CommentsThreadService = CommentsThreadServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
+    
+    lazy var accountService: AccountService = AccountServiceImpl(credentials: credentialsStorage, baseNetworkService: baseNetworkingService, urlProvider: urlProvider)
 }
 
