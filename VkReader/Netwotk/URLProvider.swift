@@ -11,12 +11,18 @@ protocol URLProvider {
     var wallGet:URL {get}
     var commentsGet:URL {get}
     var accountGetProfileInfo: URL {get}
+    var groupsGet: URL {get}
 }
 
 /// реализация требований протокола в которой переменной присваивается метод апи
 class URLProviderImpl: URLProvider {
+    
     var accountGetProfileInfo: URL {
         return URL(string: "account.getProfileInfo")!
+    }
+    
+    var groupsGet: URL {
+        return URL(string: "groups.get")!
     }
     
     var wallGet: URL {

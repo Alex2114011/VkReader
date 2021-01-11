@@ -28,6 +28,13 @@ class CorePresentationAssembly {
         vc.corePresentation = self
         return vc
     }
+    
+    func groupsViewController() -> UIViewController{
+        let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService)
+        let vc = GroupsViewController(viewModel: vm)
+        vc.corePresentation = self
+        return vc
+    }
     /// Используем этот метод для создания VC
     /// В методе создается константа vm содержащая LoginViewModelImpl он нам нужен для того что только через этот класс работатьс моделью
     /// Константа vc содержит в себе сам класс LoginViewController у которого инициализатор требует указать ViewModel с которой он будет взаимодействоать

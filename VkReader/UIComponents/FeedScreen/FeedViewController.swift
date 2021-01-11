@@ -33,7 +33,6 @@ class FeedViewController: BaseController {
         super.viewDidLoad()
         setupUI()
         viewModel.getWall()
-//        viewModel.getComment()
     }
     
     func setupUI() {

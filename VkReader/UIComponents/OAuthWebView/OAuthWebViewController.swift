@@ -50,7 +50,7 @@ extension OAuthWebViewController: WKNavigationDelegate {
                 decisionHandler(.cancel)
                 viewModel.saveToken(with: token)
                 guard let corePresentation = corePresentation else { return }
-                corePresentation.swapWindowRoot(to: corePresentation.feedViewController())
+                corePresentation.swapWindowRoot(to: corePresentation.groupsViewController())
                 return
             }
         }

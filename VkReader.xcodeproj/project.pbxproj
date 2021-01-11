@@ -21,6 +21,9 @@
 		F5B4CECE2562BCC000B5D6BD /* HostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */; };
 		F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */; };
 		FA2A4A6C2598B80C0042BB07 /* PostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2A4A6A2598B80C0042BB07 /* PostDetailViewController.xib */; };
+		FA457D1825AC64CA00155362 /* UserGroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457D1625AC64CA00155362 /* UserGroupsCollectionViewCell.swift */; };
+		FA457D1925AC64CA00155362 /* UserGroupsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA457D1725AC64CA00155362 /* UserGroupsCollectionViewCell.xib */; };
+		FA457D1C25AC697D00155362 /* UserGroupsCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA457D1B25AC697D00155362 /* UserGroupsCollectionViewCellModel.swift */; };
 		FA61FB0A256D1F8100A645EE /* WallDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB09256D1F8100A645EE /* WallDTO.swift */; };
 		FA61FB15256D631500A645EE /* WallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB14256D631500A645EE /* WallService.swift */; };
 		FA61FB18256D802600A645EE /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FB17256D802600A645EE /* URLProvider.swift */; };
@@ -47,6 +50,9 @@
 		FACFBED725AB44E0008018BA /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED625AB44E0008018BA /* AccountService.swift */; };
 		FACFBEDA25AB4E98008018BA /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBED925AB4E98008018BA /* GroupService.swift */; };
 		FACFBEDD25AB4FD5008018BA /* GroupsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEDC25AB4FD5008018BA /* GroupsDTO.swift */; };
+		FACFBEE425AB6D1A008018BA /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */; };
+		FACFBEE525AB6D1A008018BA /* GroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */; };
+		FACFBEE825AB6D49008018BA /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */; };
 		FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */; };
 		FAD936E2259A243600A7F921 /* PostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */; };
 		FAF1380325989ADA000B00F5 /* PostWithImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */; };
@@ -78,6 +84,9 @@
 		F5B4CECD2562BCC000B5D6BD /* HostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostProvider.swift; sourceTree = "<group>"; };
 		F5B4CED62563EA3B00B5D6BD /* WebCacheCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheCleaner.swift; sourceTree = "<group>"; };
 		FA2A4A6A2598B80C0042BB07 /* PostDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailViewController.xib; sourceTree = "<group>"; };
+		FA457D1625AC64CA00155362 /* UserGroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA457D1725AC64CA00155362 /* UserGroupsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserGroupsCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA457D1B25AC697D00155362 /* UserGroupsCollectionViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		FA61FB09256D1F8100A645EE /* WallDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDTO.swift; sourceTree = "<group>"; };
 		FA61FB14256D631500A645EE /* WallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallService.swift; sourceTree = "<group>"; };
 		FA61FB17256D802600A645EE /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
@@ -106,6 +115,9 @@
 		FACFBED625AB44E0008018BA /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		FACFBED925AB4E98008018BA /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		FACFBEDC25AB4FD5008018BA /* GroupsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDTO.swift; sourceTree = "<group>"; };
+		FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsViewController.xib; sourceTree = "<group>"; };
+		FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAF1380225989ADA000B00F5 /* PostWithImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCellViewModel.swift; sourceTree = "<group>"; };
@@ -153,6 +165,7 @@
 		F5AD1BF2255EC764005BD999 /* Infrastucture */ = {
 			isa = PBXGroup;
 			children = (
+				FAF2A2332574E8BF0030F63D /* Factory */,
 				F5AD1BEA255EC64F005BD999 /* KeyConstants.swift */,
 				F5AD1BE4255EC3BB005BD999 /* CredentialsStorage.swift */,
 				F5AD1BE7255EC3E3005BD999 /* BaseController.swift */,
@@ -164,6 +177,7 @@
 		F5AD1BF3255EC781005BD999 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				FACFBEE125AB6CE7008018BA /* ListGrpoups */,
 				FABCDC8A258B851500457103 /* PostDetail */,
 				FA849B74257E1E9200FCFEE1 /* DetailView */,
 				FAAE94DE256BDF2100583BDC /* CollectionAbstracts */,
@@ -305,6 +319,35 @@
 			path = LoginScreen;
 			sourceTree = "<group>";
 		};
+		FACFBEE125AB6CE7008018BA /* ListGrpoups */ = {
+			isa = PBXGroup;
+			children = (
+				FACFBEEB25AB6D5B008018BA /* CellsViewModel */,
+				FACFBEEA25AB6D52008018BA /* Cells */,
+				FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */,
+				FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */,
+				FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */,
+			);
+			path = ListGrpoups;
+			sourceTree = "<group>";
+		};
+		FACFBEEA25AB6D52008018BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA457D1625AC64CA00155362 /* UserGroupsCollectionViewCell.swift */,
+				FA457D1725AC64CA00155362 /* UserGroupsCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FACFBEEB25AB6D5B008018BA /* CellsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA457D1B25AC697D00155362 /* UserGroupsCollectionViewCellModel.swift */,
+			);
+			path = CellsViewModel;
+			sourceTree = "<group>";
+		};
 		FAF1380125989AAA000B00F5 /* CellViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +389,6 @@
 			isa = PBXGroup;
 			children = (
 				FAF2A2382574E92E0030F63D /* CellViewModels */,
-				FAF2A2332574E8BF0030F63D /* Factory */,
 				FABC74332566B7AB00ABDA0A /* Cells */,
 				FAF332A22564135E007B6F7F /* FeedViewController.swift */,
 				FAF3327C2563EDD9007B6F7F /* FeedViewModel.swift */,
@@ -420,7 +462,9 @@
 				FAF332A52564135E007B6F7F /* FeedViewController.xib in Resources */,
 				FACEF4DF255ADE3B00E373FE /* Assets.xcassets in Resources */,
 				FABC743F2566BB9E00ABDA0A /* WallPostOnlyTextCollectionViewCell.xib in Resources */,
+				FACFBEE525AB6D1A008018BA /* GroupsViewController.xib in Resources */,
 				FAD936E2259A243600A7F921 /* PostWithImageCollectionViewCell.xib in Resources */,
+				FA457D1925AC64CA00155362 /* UserGroupsCollectionViewCell.xib in Resources */,
 				FA849B79257E1F4E00FCFEE1 /* DetailImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +485,7 @@
 				FA61FB18256D802600A645EE /* URLProvider.swift in Sources */,
 				FAF2A23F2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift in Sources */,
 				FAF332A42564135E007B6F7F /* FeedViewController.swift in Sources */,
+				FA457D1C25AC697D00155362 /* UserGroupsCollectionViewCellModel.swift in Sources */,
 				FA7714AE2564195C00FB51E7 /* LoginViewController.swift in Sources */,
 				FAAE94E0256BDF4E00583BDC /* CollectionAbstracts.swift in Sources */,
 				FAF2A2352574E8D30030F63D /* VKReaderFactory.swift in Sources */,
@@ -466,8 +511,10 @@
 				F5AD1BDF255EB883005BD999 /* OAuthViewModel.swift in Sources */,
 				F5AD1BE5255EC3BB005BD999 /* CredentialsStorage.swift in Sources */,
 				FABCDC8C258B85BA00457103 /* PostDetailViewModel.swift in Sources */,
+				FACFBEE825AB6D49008018BA /* GroupsViewModel.swift in Sources */,
 				FAF1380B25989C03000B00F5 /* PostOnlyTextCollectionViewCell.swift in Sources */,
 				FACEF4FB255ADFBC00E373FE /* LoginViewModel.swift in Sources */,
+				FA457D1825AC64CA00155362 /* UserGroupsCollectionViewCell.swift in Sources */,
 				FACFBED425AB4473008018BA /* AccountDTO.swift in Sources */,
 				F5AD1BE2255EC37F005BD999 /* CoreAssembly.swift in Sources */,
 				FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */,
@@ -476,6 +523,7 @@
 				FACFBED725AB44E0008018BA /* AccountService.swift in Sources */,
 				F5B4CECB2562BC8B00B5D6BD /* LoadingResult.swift in Sources */,
 				F5B4CED72563EA3B00B5D6BD /* WebCacheCleaner.swift in Sources */,
+				FACFBEE425AB6D1A008018BA /* GroupsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

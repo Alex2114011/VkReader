@@ -39,3 +39,4 @@ struct GroupsItem: Codable {
         case photo200 = "photo_200"
     }
 }
+
