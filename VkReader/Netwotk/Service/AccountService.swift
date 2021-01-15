@@ -26,7 +26,7 @@ class AccountServiceImpl: AccountService{
 /// в методе указавываем параметры запроса к апи, эти параметры передаем в baseNetworkService
     func getAccount(callback: @escaping ((LoadingResult<AccountDTO>) -> Void)) {
         guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
-        let parameters = ["access_token": token, "v": "5.126", "extended": "1"]
+        let parameters = ["access_token": token, "v": "5.126"]
         baseNetworkService.sendRequest(url: urlProvider.accountGetProfileInfo, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
 
 

@@ -1,35 +1,39 @@
 //
-//  UserGroupsCollectionViewCellModel.swift
+//  CatalogGroupsCollectionViewCellModel.swift
 //  VkReader
 //
-//  Created by Alex on 11.01.2021.
+//  Created by Alex on 13.01.2021.
 //
 
 import UIKit
-class UserGroupsCollectionViewCellModel: VKReaderViewModelCell {
+class CatalogGroupsCollectionViewCellModel: VKReaderViewModelCell {
     
     private var dynamicHeight: CGFloat = 0
     
-    var item: GroupsItem
+    var item: GroupInfoResponse
     var imageURLString: String
     var name: String
+    var activity: String
+    var membersCount: Int
 //    var imageSize: CGFloat
     
-    init(with item: GroupsItem) {
+    init(with item: GroupInfoResponse) {
         self.item = item
         self.name = item.name ?? ""
-        self.imageURLString = item.photo100 ?? ""
+        self.imageURLString = item.photo50 ?? ""
+        self.activity = item.activity ?? ""
+        self.membersCount = item.membersCount ?? 0
     }
     
     func cellIdentifier() -> String {
-        return String(describing: UserGroupsCollectionViewCell.self)
+        return String(describing: CatalogGroupsCollectionViewCell.self)
     }
     
     func height() -> VKReaderCellHeight {
         if dynamicHeight != 0 {
             return .value(dynamicHeight)
         }
-        return .value(123)
+        return .value(50)
     }
     
     func heightIsCounted() -> Bool {
@@ -66,5 +70,4 @@ class UserGroupsCollectionViewCellModel: VKReaderViewModelCell {
             return "\(sign)\(n)"
         }
     }
-    
 }

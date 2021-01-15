@@ -10,10 +10,10 @@ import UIKit
 class GroupsViewController: BaseController {
 
     var viewModel: GroupsViewModel
-    let userCollectionView: UICollectionView = {
+    let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 5
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
@@ -30,26 +30,28 @@ class GroupsViewController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getGroups()
         viewModel.getAccount()
+        viewModel.getGroupsCatalog()
         setupUI()
     }
 
     func  setupUI() {
-        view.addSubview(userCollectionView)
-        userCollectionView.backgroundColor = UIColor(red: 1/230, green: 1/233, blue: 1/237, alpha: 0.07)
-        userCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        userCollectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        userCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        userCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        userCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        userCollectionView.dataSource = self
-        userCollectionView.delegate = self
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .white
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
         registerCells()
     }
     
     func registerCells(){
-        userCollectionView.register(UINib(nibName: String(describing: UserGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: UserGroupsCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: ContainerCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ContainerCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: CatalogGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CatalogGroupsCollectionViewCell.self))
+        collectionView.register(HeaderCatalogCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self))
     }
 }
 
@@ -60,7 +62,7 @@ extension GroupsViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
-        let cell = userCollectionView.dequeueReusableCell(withReuseIdentifier: item.cellIdentifier(), for: indexPath) as! VKReaderAbstractCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.cellIdentifier(), for: indexPath) as! VKReaderAbstractCell
         cell.setupUI()
         cell.set(delegate: self)
         cell.configure(with: item)
@@ -80,6 +82,15 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: view.bounds.width, height: value)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self), for: indexPath) as! HeaderCatalogCollectionReusableView
+        header.configure()
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 50)
+    }
 }
 
 extension GroupsViewController: VKReaderAbstractCellDelegate {
@@ -88,12 +99,12 @@ extension GroupsViewController: VKReaderAbstractCellDelegate {
     }
     
     func relayout() {
-        userCollectionView.collectionViewLayout.invalidateLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     func relayout(with completion: (() -> ())?) {
-        userCollectionView.performBatchUpdates({
-            userCollectionView.collectionViewLayout.invalidateLayout()
+        collectionView.performBatchUpdates({
+            collectionView.collectionViewLayout.invalidateLayout()
         }) { (_) in
             completion?()
         }
@@ -108,12 +119,12 @@ extension GroupsViewController: VKReaderAbstractCellDelegate {
 
 extension GroupsViewController: GroupsViewDelegate {
     func update(with indexs: [IndexPath]) {
-        userCollectionView.performBatchUpdates({
-            userCollectionView.insertItems(at: indexs)
+        collectionView.performBatchUpdates({
+            collectionView.insertItems(at: indexs)
         }, completion: nil)
     }
     
     func reloadData() {
-        userCollectionView.reloadData()
+        collectionView.reloadData()
     }
 }

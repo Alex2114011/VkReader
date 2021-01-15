@@ -1,30 +1,30 @@
 //
-//  UserGroupsCollectionViewCell.swift
+//  CatalogGroupsCollectionViewCell.swift
 //  VkReader
 //
-//  Created by Alex on 11.01.2021.
+//  Created by Alex on 13.01.2021.
 //
 
 import UIKit
 
-class UserGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
-
-    
+class CatalogGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var nameGroupLabel: UILabel!
+    @IBOutlet weak var descriptionAndCountLabel: UILabel!
+    @IBOutlet weak var subscribeButton: UIButton!
     
-    var model:UserGroupsCollectionViewCellModel?
+    var model:CatalogGroupsCollectionViewCellModel?
     weak var delegate: VKReaderAbstractCellDelegate?
     var groupImageTask: URLSessionDataTask?
     
     func setupUI() {
-        groupImageView.layer.cornerRadius = 50
+        groupImageView.layer.cornerRadius = 25
     }
     
     func configure(with object: VKReaderViewModelCell) {
-        guard let model = object as? UserGroupsCollectionViewCellModel else { return  }
+        guard let model = object as? CatalogGroupsCollectionViewCellModel else { return  }
         self.model = model
-        nameGroupLabel.text = model.name
+        self.descriptionAndCountLabel.text = "\(model.activity), \(model.formatNumber(model.membersCount)) участников"
         if let url = NSURL(string: model.imageURLString) {
             groupImageTask = ImageCache.shared.load(url: url, callback: { [weak self] (image) in
                 self?.groupImageView.image = image
@@ -41,5 +41,9 @@ class UserGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
         super.prepareForReuse()
         groupImageTask?.cancel()
         groupImageTask = nil
+    }
+
+
+    @IBAction func tappedSubscribe(_ sender: UIButton) {
     }
 }

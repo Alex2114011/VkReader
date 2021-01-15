@@ -9,6 +9,8 @@ import Foundation
 
 protocol GroupService {
     func getUserGroups(for userID: Int, count: Int, callback: @escaping ((LoadingResult<GroupsDTO>) -> Void))
+    func getCatalogGroups( callback: @escaping ((LoadingResult<GroupsDTO>) -> Void))
+    func getGroupsInfo(for groupIDs:[Int], callback: @escaping ((LoadingResult<GroupInfoDTO>) -> Void))
 }
 
 class GroupServiceImpl: GroupService {
@@ -28,12 +30,16 @@ class GroupServiceImpl: GroupService {
         let parameters = ["user_id": "\(userID)", "count": "\(count)", "access_token": token, "v": "5.126", "extended": "1"]
         baseNetworkService.sendRequest(url: urlProvider.groupsGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
     }
-//    params[user_id]=248758944&params[extended]=1&params[count]=10&params[v]=5.126
-//    func getRecomendGroups(categoryId:Int?, subcategoryID: Int?, callback: @escaping ((LoadingResult<GroupsDTO>) -> Void)) {
-//        guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
-//        let parameters = ["category_id":"\(categoryId)","subcategoryID":"\(subcategoryID)" ,"access_token": token, "v": "5.126"]
-//        baseNetworkService.sendRequest(url: urlProvider.groupsGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
-//    }
     
+    func getCatalogGroups( callback: @escaping ((LoadingResult<GroupsDTO>) -> Void)) {
+        guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
+        let parameters = ["access_token": token, "v": "5.126"]
+        baseNetworkService.sendRequest(url: urlProvider.groupsGetCatalog, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
+    }
     
+    func getGroupsInfo(for groupIDs:[Int], callback: @escaping ((LoadingResult<GroupInfoDTO>) -> Void)) {
+        guard let token = credentials.get(key: kToken) else { callback(.failure(nil)); return }
+        let parameters = ["group_ids":"\(groupIDs)","count":"0", "fields":"status,members_count,activity", "access_token": token, "v": "5.126"]
+        baseNetworkService.sendRequest(url: urlProvider.groupsInfoGet, parameters: parameters, httpMethod: .get, headerParameters: nil, data: nil, callback: callback)
+    }
 }
