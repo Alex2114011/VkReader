@@ -23,6 +23,13 @@ class VKReaderFactory {
             return PostOnlyTextCellViewModel(with: item, and: profile)
         }
     }
+    static func makeUserGroupsModel(with item: GroupsItem) -> VKReaderViewModelCell {
+        if let attachments = item.isMember, attachments == 1 {
+            return UserGroupsCollectionViewCellModel(with: item)
+        } else {
+            return UserGroupsCollectionViewCellModel(with: item)
+        }
+    }
     static func makeGroupsModel(with item: GroupInfoResponse) -> VKReaderViewModelCell {
         if let attachments = item.isMember, attachments == 1 {
             return CatalogGroupsCollectionViewCellModel(with: item)

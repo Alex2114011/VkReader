@@ -49,7 +49,7 @@ class GroupsViewController: BaseController {
     }
     
     func registerCells(){
-        collectionView.register(UINib(nibName: String(describing: ContainerCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ContainerCollectionViewCell.self))
+        collectionView.register(UINib(nibName: String(describing: UserGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: UserGroupsCollectionViewCell.self))
         collectionView.register(UINib(nibName: String(describing: CatalogGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CatalogGroupsCollectionViewCell.self))
         collectionView.register(HeaderCatalogCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self))
     }

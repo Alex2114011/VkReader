@@ -57,7 +57,7 @@ class GroupsViewModelImpl: GroupsViewModel {
                     case .success(let dto):
                         var models: [VKReaderViewModelCell] = []
                         dto.response?.items?.forEach({
-                            models.append(VKReaderFactory.makeGroupsModel(with: $0))
+                            models.append(VKReaderFactory.makeUserGroupsModel(with: $0))
                         })
                         let section = VKReaderSection()
                         section.cellsViewModel = models
