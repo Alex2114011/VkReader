@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        WebCacheCleaner.clean()
-        coreAssembly.credentialsStorage.remove(by: kToken)
+//        WebCacheCleaner.clean()
+//        coreAssembly.credentialsStorage.remove(by: kToken)
         if let token = coreAssembly.credentialsStorage.get(key: kToken) {
             print("Авторизованы уже, вот токен \(token)")
-            let navigation = presentationAssembly.feedViewController()
+            let navigation = presentationAssembly.groupsViewController()
             window?.rootViewController = navigation
         } else {
             let navigation = UINavigationController(rootViewController: presentationAssembly.loginViewController())

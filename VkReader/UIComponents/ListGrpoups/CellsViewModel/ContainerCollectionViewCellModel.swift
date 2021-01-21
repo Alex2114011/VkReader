@@ -7,28 +7,26 @@
 
 import UIKit
 
-protocol ContainerCollectionViewCellModel{
-    var viewModel:GroupsViewModel {get}
-}
-
-class ContainerCollectionViewCellModelImpl: VKReaderViewModelCell, ContainerCollectionViewCellModel{
+class ContainerCollectionViewCellModel: VKReaderViewModelCell {
+    
+    var item: GroupsItem
+    
     private var dynamicHeight: CGFloat = 0
     
-    let viewModel:GroupsViewModel
     
-    init(viewModel:GroupsViewModel) {
-        self.viewModel = viewModel
+    init(with item: GroupsItem) {
+        self.item = item
     }
-
+    
     func cellIdentifier() -> String {
-        String(describing: ContainerCollectionViewCell.self)
+        return String(describing: ContainerCollectionViewCell.self)
     }
     
     func height() -> VKReaderCellHeight {
         if dynamicHeight != 0 {
             return .value(dynamicHeight)
         }
-        return .value(150)
+        return .value(140)
     }
     
     func heightIsCounted() -> Bool {
@@ -36,9 +34,11 @@ class ContainerCollectionViewCellModelImpl: VKReaderViewModelCell, ContainerColl
             return false
         }
         return true
-    }
+}
     
     func formatNumber(_ n: Int) -> String {
         return ""
     }
+    
+    
 }

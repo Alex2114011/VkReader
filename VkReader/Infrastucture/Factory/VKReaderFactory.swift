@@ -25,9 +25,9 @@ class VKReaderFactory {
     }
     static func makeUserGroupsModel(with item: GroupsItem) -> VKReaderViewModelCell {
         if let attachments = item.isMember, attachments == 1 {
-            return UserGroupsCollectionViewCellModel(with: item)
+            return ContainerCollectionViewCellModel(with: item)
         } else {
-            return UserGroupsCollectionViewCellModel(with: item)
+            return ContainerCollectionViewCellModel(with: item)
         }
     }
     static func makeGroupsModel(with item: GroupInfoResponse) -> VKReaderViewModelCell {
