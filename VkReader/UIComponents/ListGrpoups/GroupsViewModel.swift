@@ -59,8 +59,9 @@ class GroupsViewModelImpl: GroupsViewModel {
                         dto.response?.items?.forEach({
                             models.append(VKReaderFactory.makeUserGroupsModel(with: $0))
                         })
+                        let wrapper = ContainerArrayWrapperCellViewModel(with: models)
                         let section = VKReaderSection()
-                        section.cellsViewModel = models
+                        section.cellsViewModel = [wrapper]
                         self.sections = [section]
                         self.delegate?.reloadData()
                     case .failure(let error):

@@ -38,9 +38,9 @@ class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     }
     
     func configure(with object: VKReaderViewModelCell) {
-        guard let model = object as? ContainerCollectionViewCellModel else {return}
-        self.model?.append(model)
-        self.modelForCell = model
+        guard let model = object as? ContainerArrayWrapperCellViewModel else {return}
+        self.model = model.items
+        collectionView.reloadData()
     }
     
     func set(delegate: VKReaderAbstractCellDelegate) {
