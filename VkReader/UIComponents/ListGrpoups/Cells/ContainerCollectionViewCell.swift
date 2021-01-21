@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// внутряння коллекция
 class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     
     var model:[ContainerCollectionViewCellModel]?
