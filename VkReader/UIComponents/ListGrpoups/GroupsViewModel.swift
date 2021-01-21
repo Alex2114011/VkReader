@@ -92,7 +92,7 @@ class GroupsViewModelImpl: GroupsViewModel {
                             })
                             let section = VKReaderSection()
                             section.cellsViewModel = models
-                            self.sections = [section]
+                            self.sections.append(section)
                             self.delegate?.reloadData()
                         case .failure(let error):
                                         print(error?.localizedDescription ?? "getGroupsInfo failure")

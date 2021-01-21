@@ -7,106 +7,68 @@
 
 import UIKit
 
-class ContainerCollectionViewCell: UICollectionViewCell, ContainerCollectionViewCellModel {
-    var viewModel: GroupsViewModel
-
-    init(viewModel: GroupsViewModel) {
-        super.init(nibName: String(describing: UserGroupsCollectionViewCell.self), bundle: nil)
-        self.viewModel = viewModel
-    }
+class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var model:[ContainerCollectionViewCellModel]?
+    weak var delegate: VKReaderAbstractCellDelegate?
+    var modelForCell: VKReaderViewModelCell?
+    
+    
     
     let collectionView:UICollectionView = {
-        let layuot = UICollectionViewFlowLayout()
-        layuot.scrollDirection = .horizontal
-        layuot.minimumLineSpacing = 5
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layuot)
+       let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 5
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupIU()
-        registerCells()
-    }
-    
-    func setupIU(){
+    func setupUI() {
+        
         addSubview(collectionView)
-        collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        
+        collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        registerCell()
+       
     }
     
-    func registerCells(){
-        collectionView.register(UINib(nibName: String(describing: UserGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: UserGroupsCollectionViewCell.self))
+    func configure(with object: VKReaderViewModelCell) {
+        guard let model = object as? ContainerCollectionViewCellModel else {return}
+        self.model?.append(model)
+        self.modelForCell = model
     }
-
+    
+    func set(delegate: VKReaderAbstractCellDelegate) {
+        self.delegate = delegate
+    }
+    
+    func registerCell() {
+        collectionView.register(UINib(nibName: String(describing: UserGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier:  String(describing: UserGroupsCollectionViewCell.self))
+    }
+    
 }
 
 extension ContainerCollectionViewCell: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.sections[section].cellsViewModel.count
+        return model?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.cellIdentifier(), for: indexPath) as! VKReaderAbstractCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: UserGroupsCollectionViewCell.self), for: indexPath) as! VKReaderAbstractCell
         cell.setupUI()
-        cell.set(delegate: self)
-        cell.configure(with: item)
         return cell
     }
     
-    
 }
 
 
-extension ContainerCollectionViewCell:UICollectionViewDelegateFlowLayout{
+extension ContainerCollectionViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let item = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row].height()
-        switch item {
-        case .value(let value):
-            return CGSize(width: bounds.width, height: value)
-        }
+        return CGSize(width: bounds.width, height: 140)
     }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self), for: indexPath) as! HeaderCatalogCollectionReusableView
-        header.configure()
-        return header
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: frame.size.width, height: 50)
-    }
-}
-
-extension ContainerCollectionViewCell: VKReaderAbstractCellDelegate {
-    func didTap(with action: VKReaderTapAction) {
-        
-    }
-    
-    func relayout() {
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    func relayout(with completion: (() -> ())?) {
-        collectionView.performBatchUpdates({
-            collectionView.collectionViewLayout.invalidateLayout()
-        }) { (_) in
-            completion?()
-        }
-    }
-    
-    func passImage(image: UIImage) {
-        
-    }
-    
-    
 }
