@@ -13,7 +13,7 @@ class UserGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     @IBOutlet weak var groupImageView: UIImageView!
     @IBOutlet weak var nameGroupLabel: UILabel!
     
-    var model:UserGroupsCollectionViewCellModel?
+    var model:ContainerCollectionViewCellModel?
     weak var delegate: VKReaderAbstractCellDelegate?
     var groupImageTask: URLSessionDataTask?
     
@@ -22,16 +22,16 @@ class UserGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     }
     
     func configure(with object: VKReaderViewModelCell) {
-        guard let model = object as? UserGroupsCollectionViewCellModel else { return  }
+        guard let model = object as? ContainerCollectionViewCellModel else { fatalError("object empty")  }
         self.model = model
-        nameGroupLabel.text = model.name
-        if let url = NSURL(string: model.imageURLString) {
+        nameGroupLabel.text = model.item.name
+        if let url = NSURL(string: model.item.photo100 ?? "") {
             groupImageTask = ImageCache.shared.load(url: url, callback: { [weak self] (image) in
                 self?.groupImageView.image = image
             })
             groupImageTask?.resume()
         }
-        nameGroupLabel.text = model.name
+        nameGroupLabel.text = model.item.name
     }
     
     func set(delegate: VKReaderAbstractCellDelegate) {

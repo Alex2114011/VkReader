@@ -18,7 +18,7 @@ class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     let collectionView:UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 3
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
@@ -26,10 +26,11 @@ class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     func setupUI() {
         
         addSubview(collectionView)
+        collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: rightAnchor, constant: 8).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -59,8 +60,10 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let item = model else { fatalError() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: UserGroupsCollectionViewCell.self), for: indexPath) as! VKReaderAbstractCell
         cell.setupUI()
+        cell.configure(with: item[indexPath.row])
         return cell
     }
     
@@ -69,6 +72,6 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource{
 
 extension ContainerCollectionViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.width, height: 140)
+        return CGSize(width: 100, height: 123)
     }
 }
