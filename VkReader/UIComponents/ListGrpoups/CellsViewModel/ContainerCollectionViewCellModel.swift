@@ -26,7 +26,7 @@ class ContainerArrayWrapperCellViewModel: VKReaderViewModelCell {
         if dynamicHeight != 0 {
             return .value(dynamicHeight)
         }
-        return .value(140)
+        return .value(120)
     }
     
     func heightIsCounted() -> Bool {

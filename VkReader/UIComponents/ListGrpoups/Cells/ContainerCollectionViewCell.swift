@@ -72,6 +72,6 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource{
 
 extension ContainerCollectionViewCell: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 123)
+        return CGSize(width: 100, height: 105)
     }
 }

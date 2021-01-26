@@ -18,7 +18,7 @@ class UserGroupsCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     var groupImageTask: URLSessionDataTask?
     
     func setupUI() {
-        groupImageView.layer.cornerRadius = 50
+        groupImageView.layer.cornerRadius = 37.5
     }
     
     func configure(with object: VKReaderViewModelCell) {
