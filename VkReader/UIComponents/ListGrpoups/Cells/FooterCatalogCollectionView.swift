@@ -1,21 +1,19 @@
 //
-//  HeaderCatalogCollectionReusableView.swift
+//  FooterCatalogCollectionView.swift
 //  VkReader
 //
-//  Created by Alex on 14.01.2021.
+//  Created by  Alex on 26.01.2021.
 //
 
 import UIKit
 
-class HeaderCatalogCollectionReusableView: UICollectionReusableView {
-  
+class FooterCatalogCollectionReusableView: UICollectionReusableView {
+    
     let label:UILabel = {
         let label = UILabel()
-        label.text = "МОИ ГРУППЫ"
+        label.text = "РЕКОМЕНДАЦИИ"
         return label
     }()
-    
-    
     func configure() {
         addSubview(label)
         label.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)

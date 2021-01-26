@@ -52,6 +52,7 @@ class GroupsViewController: BaseController {
         collectionView.register(UINib(nibName: String(describing: ContainerCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: ContainerCollectionViewCell.self))
         collectionView.register(UINib(nibName: String(describing: CatalogGroupsCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: CatalogGroupsCollectionViewCell.self))
         collectionView.register(HeaderCatalogCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self))
+        collectionView.register(FooterCatalogCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: String(describing: FooterCatalogCollectionReusableView.self))
     }
 }
 
@@ -83,9 +84,16 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if indexPath.section == 0{
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: HeaderCatalogCollectionReusableView.self), for: indexPath) as! HeaderCatalogCollectionReusableView
         header.configure()
         return header
+        } else if indexPath.section == 1{
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: String(describing: FooterCatalogCollectionReusableView.self), for: indexPath) as! FooterCatalogCollectionReusableView
+            footer.configure()
+            return footer
+        }
+        assert(false, "No have SupplementaryElementOfKind for sectionSupplementaryElementOfKind")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

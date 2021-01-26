@@ -57,6 +57,7 @@
 		FACFBEE425AB6D1A008018BA /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */; };
 		FACFBEE525AB6D1A008018BA /* GroupsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */; };
 		FACFBEE825AB6D49008018BA /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */; };
+		FAD6E26D25C036AD009FA864 /* FooterCatalogCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD6E26C25C036AD009FA864 /* FooterCatalogCollectionView.swift */; };
 		FAD936E1259A243600A7F921 /* PostWithImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */; };
 		FAD936E2259A243600A7F921 /* PostWithImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */; };
 		FAE166B625AF3AB700AF5E34 /* CatalogGroupsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE166B425AF3AB700AF5E34 /* CatalogGroupsCollectionViewCell.swift */; };
@@ -129,6 +130,7 @@
 		FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupsViewController.xib; sourceTree = "<group>"; };
 		FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		FAD6E26C25C036AD009FA864 /* FooterCatalogCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCatalogCollectionView.swift; sourceTree = "<group>"; };
 		FAD936DF259A243600A7F921 /* PostWithImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD936E0259A243600A7F921 /* PostWithImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAE166B425AF3AB700AF5E34 /* CatalogGroupsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogGroupsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				FAE166B425AF3AB700AF5E34 /* CatalogGroupsCollectionViewCell.swift */,
 				FAE166B525AF3AB700AF5E34 /* CatalogGroupsCollectionViewCell.xib */,
 				FAAE837425B040DD0093AF25 /* HeaderCatalogCollectionReusableView.swift */,
+				FAD6E26C25C036AD009FA864 /* FooterCatalogCollectionView.swift */,
 				FAA9756625B1A11900C461F5 /* ContainerCollectionViewCell.swift */,
 				FAA9756725B1A11900C461F5 /* ContainerCollectionViewCell.xib */,
 			);
@@ -506,6 +509,7 @@
 				FAF1380325989ADA000B00F5 /* PostWithImageCellViewModel.swift in Sources */,
 				FAAE837825B06F960093AF25 /* GroupInfoDTO.swift in Sources */,
 				F5B4CEC82562BC3000B5D6BD /* HTTPMethod.swift in Sources */,
+				FAD6E26D25C036AD009FA864 /* FooterCatalogCollectionView.swift in Sources */,
 				FA61FB18256D802600A645EE /* URLProvider.swift in Sources */,
 				FAF2A23F2574E9890030F63D /* WallPostOnlyTextCellViewModel.swift in Sources */,
 				FAAE837525B040DD0093AF25 /* HeaderCatalogCollectionReusableView.swift in Sources */,
