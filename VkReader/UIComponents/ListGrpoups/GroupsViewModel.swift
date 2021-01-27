@@ -21,6 +21,7 @@ protocol GroupsViewModel {
     func getAccount()
     func getGroupsCatalog()
     func nextPage()
+    func selectedGroup(indexPath: Int) -> Int
 }
 
 class GroupsViewModelImpl: GroupsViewModel {
@@ -34,10 +35,14 @@ class GroupsViewModelImpl: GroupsViewModel {
     
     let accountService: AccountService
     let groupService: GroupService
+    var wallService: WallService
+    var commentService: CommentsService
     
-    init(groupService: GroupService, accountService: AccountService) {
+    init(groupService: GroupService, accountService: AccountService, wallService: WallService, commentService: CommentsService) {
         self.groupService = groupService
         self.accountService = accountService
+        self.wallService = wallService
+        self.commentService = commentService
     }
  
     
@@ -108,4 +113,10 @@ class GroupsViewModelImpl: GroupsViewModel {
     func nextPage() {
         
     }
+    func selectedGroup(indexPath: Int) -> Int {
+        let groupID = self.groupsIDArray[indexPath + 1]
+        wallService.ownerID = groupID
+        commentService.ownerID = groupID
+        return groupID
+}
 }

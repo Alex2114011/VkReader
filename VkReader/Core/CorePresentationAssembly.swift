@@ -30,7 +30,7 @@ class CorePresentationAssembly {
     }
     
     func groupsViewController() -> UIViewController{
-        let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService)
+        let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService, wallService: coreAssembly.wallService, commentService: coreAssembly.commentsService)
         let vc = GroupsViewController(viewModel: vm)
         vc.corePresentation = self
         return vc
