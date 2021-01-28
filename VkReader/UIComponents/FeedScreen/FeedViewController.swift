@@ -32,6 +32,7 @@ class FeedViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        goBackButton()
         viewModel.getWall()
     }
     
@@ -46,6 +47,13 @@ class FeedViewController: BaseController {
         registerCells()
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    func goBackButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Группы", style: .plain, target: self, action: #selector(navigateToListGrpups(parameter:)))
+    }
+    
+    @objc func navigateToListGrpups(parameter: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func registerCells() {
