@@ -21,6 +21,7 @@ protocol FeedViewModel {
     var postsId:[Int] {get set}
     var index:Int? {get set}
     func getPostID(indexPath: Int) -> Int
+    var ownerID: Int{get set}
 }
 
 class FeedViewModelImpl: FeedViewModel{

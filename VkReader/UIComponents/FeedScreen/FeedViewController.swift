@@ -85,7 +85,7 @@ extension FeedViewController: UICollectionViewDelegate {
         viewModel.index = indexPath.row
         let viewModelCell = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
         guard let core = corePresentation else { return }
-        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row)), animated: true, completion: nil)
+        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row), and: viewModel.ownerID), animated: true, completion: nil)
         
     }
 }

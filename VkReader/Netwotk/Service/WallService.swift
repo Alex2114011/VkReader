@@ -15,9 +15,6 @@ protocol WallService {
 
 class WallServiceImpl: WallService{
     var ownerID: Int = 0
-//    // идентификатор владельца стены, на которой размещена запись.
-//    fileprivate let ownerID: String = "-20845272" // группа с длинными постами -83978073 и с маленькими  -65662695 -146780172 -20845272
-//    ///указываем свойства необходимые для отправки запроса
     let credentials: CredentialsStorage
     let baseNetworkService: BaseNetworkService
     let urlProvider: URLProvider

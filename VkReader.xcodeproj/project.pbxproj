@@ -243,10 +243,10 @@
 		FA61FB13256D629900A645EE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				FA61FB14256D631500A645EE /* WallService.swift */,
 				FACFBED625AB44E0008018BA /* AccountService.swift */,
-				FABCDC8F258B8B8C00457103 /* CommentsService.swift */,
 				FACFBED925AB4E98008018BA /* GroupService.swift */,
+				FA61FB14256D631500A645EE /* WallService.swift */,
+				FABCDC8F258B8B8C00457103 /* CommentsService.swift */,
 				FA643BFE25A4B69D00024BF8 /* CommentsThreadService.swift */,
 			);
 			path = Service;
@@ -342,8 +342,8 @@
 				FACFBEEB25AB6D5B008018BA /* CellsViewModel */,
 				FACFBEEA25AB6D52008018BA /* Cells */,
 				FACFBEE225AB6D1A008018BA /* GroupsViewController.swift */,
-				FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */,
 				FACFBEE725AB6D49008018BA /* GroupsViewModel.swift */,
+				FACFBEE325AB6D1A008018BA /* GroupsViewController.xib */,
 			);
 			path = ListGrpoups;
 			sourceTree = "<group>";

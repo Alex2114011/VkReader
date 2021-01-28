@@ -28,11 +28,13 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     var postViewModel: VKReaderViewModelCell
     weak var delegate: PostViewDelegate?
     let postIdentifier: Int
+    let ownerID:Int
     
-    init(commentService:CommentsService, postViewModel: VKReaderViewModelCell, postIdentifier: Int) {
+    init(commentService:CommentsService, postViewModel: VKReaderViewModelCell, postIdentifier: Int, and ownerID:Int) {
         self.commentService = commentService
         self.postViewModel = postViewModel
         self.postIdentifier = postIdentifier
+        self.ownerID = ownerID
     }
     
     func set(delegate: PostViewDelegate) {
@@ -40,7 +42,7 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     }
 
     func getComment() {
-        commentService.getComments(for: postIdentifier, count: 10, with: 0) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, and: ownerID, count: 10, with: 0) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
@@ -78,7 +80,7 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     
     func nextComment() {
         guard let readerSection = sections.first else { return }
-        commentService.getComments(for: postIdentifier, count: 50, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, and: ownerID, count: 50, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
