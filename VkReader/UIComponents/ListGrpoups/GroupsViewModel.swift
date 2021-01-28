@@ -115,8 +115,6 @@ class GroupsViewModelImpl: GroupsViewModel {
     
     func getOwnerID(indexPath: Int) -> Int {
         let ownerID = self.groupsIDArray[indexPath + 1]
-        
-    
         return ownerID
     }
 }

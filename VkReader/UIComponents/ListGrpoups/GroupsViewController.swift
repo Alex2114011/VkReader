@@ -107,8 +107,13 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension GroupsViewController: VKReaderAbstractCellDelegate {
+    func passOwnerID(with ownerID: Int) {
+        guard let core = corePresentation else { return  }
+        self.present(core.feedViewController(for: ownerID), animated: true, completion: nil)
+    }
+    
+    
     func didTap(with action: VKReaderTapAction) {
-        
     }
     
     func relayout() {

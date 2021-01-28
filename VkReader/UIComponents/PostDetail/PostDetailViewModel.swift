@@ -42,7 +42,7 @@ class PostDetailViewModelImpl: PostDetailViewModel {
     }
 
     func getComment() {
-        commentService.getComments(for: postIdentifier, and: ownerID, count: 10, with: 0) { [weak self] (result) in
+        commentService.getComments(for: postIdentifier, and: ownerID, count: 20, with: 0) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):

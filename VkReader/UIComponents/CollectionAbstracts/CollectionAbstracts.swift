@@ -55,4 +55,5 @@ protocol VKReaderAbstractCellDelegate: class {
     func relayout()
     func relayout(with completion: (() -> ())?)
     func passImage(image: UIImage)
+    func passOwnerID(with ownerID:Int)
 }
