@@ -21,6 +21,7 @@ protocol GroupsViewModel {
     func getAccount()
     func getGroupsCatalog()
     func nextPage()
+    func getOwnerID(indexPath: Int) -> Int 
 }
 
 class GroupsViewModelImpl: GroupsViewModel {
@@ -34,10 +35,12 @@ class GroupsViewModelImpl: GroupsViewModel {
     
     let accountService: AccountService
     let groupService: GroupService
+    let wallService: WallService
     
-    init(groupService: GroupService, accountService: AccountService) {
+    init(groupService: GroupService, accountService: AccountService, wallService: WallService) {
         self.groupService = groupService
         self.accountService = accountService
+        self.wallService = wallService
     }
  
     
@@ -107,5 +110,13 @@ class GroupsViewModelImpl: GroupsViewModel {
     }
     func nextPage() {
         
+    }
+    
+    
+    func getOwnerID(indexPath: Int) -> Int {
+        let ownerID = self.groupsIDArray[indexPath + 1]
+        
+    
+        return ownerID
     }
 }
