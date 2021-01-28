@@ -73,6 +73,11 @@ extension GroupsViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.sections.count
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.index = indexPath.row
+        guard let core = corePresentation else { return }
+        self.present(core.feedViewController(), animated: true, completion: nil)
+    }
 }
 
 extension GroupsViewController: UICollectionViewDelegateFlowLayout {
