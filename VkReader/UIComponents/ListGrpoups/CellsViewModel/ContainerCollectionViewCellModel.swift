@@ -44,12 +44,14 @@ class ContainerArrayWrapperCellViewModel: VKReaderViewModelCell {
 class ContainerCollectionViewCellModel: VKReaderViewModelCell {
     
     var item: GroupsItem
+    var ownerID:Int
     
     private var dynamicHeight: CGFloat = 0
     
     
     init(with item: GroupsItem) {
         self.item = item
+        self.ownerID = item.id ?? 0
     }
     
     func cellIdentifier() -> String {

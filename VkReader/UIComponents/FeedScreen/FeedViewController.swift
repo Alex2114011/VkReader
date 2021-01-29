@@ -32,6 +32,7 @@ class FeedViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        goBackButton()
         viewModel.getWall()
     }
     
@@ -46,6 +47,13 @@ class FeedViewController: BaseController {
         registerCells()
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    func goBackButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Группы", style: .plain, target: self, action: #selector(navigateToListGrpups(parameter:)))
+    }
+    
+    @objc func navigateToListGrpups(parameter: UIBarButtonItem) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func registerCells() {
@@ -85,7 +93,7 @@ extension FeedViewController: UICollectionViewDelegate {
         viewModel.index = indexPath.row
         let viewModelCell = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
         guard let core = corePresentation else { return }
-        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row)), animated: true, completion: nil)
+        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row), and: viewModel.ownerID), animated: true, completion: nil)
         
     }
 }
@@ -100,7 +108,11 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension FeedViewController: VKReaderAbstractCellDelegate {
+    extension FeedViewController: VKReaderAbstractCellDelegate {
+        func passOwnerID(with ownerID: Int) {
+            
+        }
+        
     func passImage(image: UIImage) {
         let vc = DetailImageViewController(image: image)
         vc.modalPresentationStyle = .custom

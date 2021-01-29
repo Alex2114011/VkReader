@@ -76,9 +76,7 @@ extension GroupsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.index = indexPath.row
         guard let core = corePresentation else { return }
-        viewModel.selectedGroup(indexPath: indexPath.row)
-        self.present(core.feedViewController(), animated: true, completion: nil)
-        
+        self.present(core.feedViewController(for: viewModel.getOwnerID(indexPath: indexPath.row)), animated: true, completion: nil)
     }
 }
 
@@ -109,8 +107,13 @@ extension GroupsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension GroupsViewController: VKReaderAbstractCellDelegate {
+    func passOwnerID(with ownerID: Int) {
+        guard let core = corePresentation else { return  }
+        self.present(core.feedViewController(for: ownerID), animated: true, completion: nil)
+    }
+    
+    
     func didTap(with action: VKReaderTapAction) {
-        
     }
     
     func relayout() {

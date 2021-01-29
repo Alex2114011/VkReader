@@ -119,6 +119,11 @@ extension PostDetailViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PostDetailViewController: VKReaderAbstractCellDelegate {
+    func passOwnerID(with ownerID: Int) {
+        
+    }
+    
+    
     func passImage(image: UIImage) {
         let vc = DetailImageViewController(image: image)
         vc.modalPresentationStyle = .custom

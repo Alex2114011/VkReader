@@ -30,7 +30,7 @@ class CorePresentationAssembly {
     }
     
     func groupsViewController() -> UIViewController{
-        let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService, wallService: coreAssembly.wallService, commentService: coreAssembly.commentsService)
+        let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService, wallService: coreAssembly.wallService)
         let vc = GroupsViewController(viewModel: vm)
         vc.corePresentation = self
         return vc
@@ -52,8 +52,8 @@ class CorePresentationAssembly {
     /// Так как необходимо дать возможность переходить с этого экрана на другие методом PUSH мы создаем в этом классе свой собственный navigationController который будем использовать при входе в авторизованною зону, а так же указываем стиль открытия модального перехода
     /// vc.corePresentation = self передаем в класс baseController ссылку на этот же класс(CorePresentationAssembly) это нужно тогда когда необходимо позволить через этот класс инициализировать ViewController
     /// - Returns: возвращает ViewController
-    func feedViewController() -> UIViewController {
-        let vm = FeedViewModelImpl(wallService: coreAssembly.wallService, commentService: coreAssembly.commentsService)
+    func feedViewController(for ownerID: Int) -> UIViewController {
+        let vm = FeedViewModelImpl(wallService: coreAssembly.wallService, commentService: coreAssembly.commentsService, for: ownerID)
         let vc = FeedViewController(viewModel: vm)
         let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
@@ -61,8 +61,8 @@ class CorePresentationAssembly {
         return  navigationController
     }
     
-    func postDetailViewController(with postModel: VKReaderViewModelCell, for postID: Int) -> UIViewController {
-        let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService, postViewModel: postModel, postIdentifier: postID)
+    func postDetailViewController(with postModel: VKReaderViewModelCell, for postID: Int, and ownerId:Int) -> UIViewController {
+        let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService, postViewModel: postModel, postIdentifier: postID, and: ownerId)
        
         let vc = PostDetailViewController(viewModel: vm)
         let navigationController = UINavigationController(rootViewController: vc)

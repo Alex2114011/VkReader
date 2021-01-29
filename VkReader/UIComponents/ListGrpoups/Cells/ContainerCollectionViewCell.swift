@@ -11,8 +11,10 @@ class ContainerCollectionViewCell: UICollectionViewCell, VKReaderAbstractCell {
     
     var model:[ContainerCollectionViewCellModel]?
     weak var delegate: VKReaderAbstractCellDelegate?
-    var modelForCell: VKReaderViewModelCell?
-    
+    var ownerID:Int = 0
+
+    var coreAssembly = CoreAssembly()
+    lazy var presentationAssembly = coreAssembly.presentationAssembly
     
     
     let collectionView:UICollectionView = {
@@ -66,7 +68,11 @@ extension ContainerCollectionViewCell: UICollectionViewDataSource{
         cell.configure(with: item[indexPath.row])
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = model?[indexPath.row].item.id else {return}
+        delegate?.passOwnerID(with: id)
+        
+    }
 }
 
 

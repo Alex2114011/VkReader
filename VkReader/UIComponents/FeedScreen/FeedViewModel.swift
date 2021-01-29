@@ -21,11 +21,13 @@ protocol FeedViewModel {
     var postsId:[Int] {get set}
     var index:Int? {get set}
     func getPostID(indexPath: Int) -> Int
+    var ownerID: Int{get set}
 }
 
 class FeedViewModelImpl: FeedViewModel{
     var index: Int?
     var postsId = [Int]()
+    var ownerID: Int
     
     
     let wallService: WallService
@@ -34,9 +36,10 @@ class FeedViewModelImpl: FeedViewModel{
     var sections: [VKReaderSectionModel] = []
     weak var delegate: FeedViewDelegate?
     
-    init(wallService: WallService, commentService:CommentsService) {
+    init(wallService: WallService, commentService:CommentsService, for ownerID: Int) {
         self.wallService = wallService
         self.commentService = commentService
+        self.ownerID = ownerID
     }
     
     func set(delegate: FeedViewDelegate) {
@@ -44,7 +47,7 @@ class FeedViewModelImpl: FeedViewModel{
     }
     
     func getWall() {
-        wallService.getPosts(count: 10, with: 0) { [weak self] (result) in
+        wallService.getPosts(for: ownerID, count: 10, with: 0) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
@@ -68,7 +71,7 @@ class FeedViewModelImpl: FeedViewModel{
     
     func nextPage() {
         guard let readerSection = sections.first else { return }
-        wallService.getPosts(count: 10, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
+        wallService.getPosts(for: ownerID, count: 10, with: readerSection.cellsViewModel.count + 1) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let dto):
