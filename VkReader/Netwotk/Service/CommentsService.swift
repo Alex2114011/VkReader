@@ -10,7 +10,7 @@ import Foundation
 protocol CommentsService {
     func getComments(for postIdentifier: Int, and ownerID:Int, count: Int, with offset: Int, callback: @escaping ((LoadingResult<CommentDTO>) -> Void))
     var postID: Int {get set}
-    var ownerID:Int{get set}
+//    var ownerID:Int{get set}
 }
 
 class CommentsServiceImpl: CommentsService{

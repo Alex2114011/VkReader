@@ -118,4 +118,4 @@ class GroupsViewModelImpl: GroupsViewModel {
         return ownerID
     }
 }
-}
+
