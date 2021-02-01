@@ -76,7 +76,7 @@ extension GroupsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.index = indexPath.row
         guard let core = corePresentation else { return }
-        self.present(core.feedViewController(for: viewModel.getOwnerID(indexPath: indexPath.row)), animated: true, completion: nil)
+        self.navigationController?.pushViewController(core.feedViewController(for: viewModel.getOwnerID(indexPath: indexPath.row)), animated: true)
     }
 }
 
