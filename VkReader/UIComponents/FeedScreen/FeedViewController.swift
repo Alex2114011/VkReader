@@ -34,6 +34,7 @@ class FeedViewController: BaseController {
         setupUI()
         goBackButton()
         viewModel.getWall()
+
     }
     
     func setupUI() {
@@ -47,13 +48,18 @@ class FeedViewController: BaseController {
         registerCells()
         collectionView.delegate = self
         collectionView.dataSource = self
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.hidesBarsOnSwipe = true
     }
+    
     func goBackButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Группы", style: .plain, target: self, action: #selector(navigateToListGrpups(parameter:)))
     }
     
     @objc func navigateToListGrpups(parameter: UIBarButtonItem) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.popViewController(animated: true)
     }
     
     func registerCells() {
@@ -93,7 +99,8 @@ extension FeedViewController: UICollectionViewDelegate {
         viewModel.index = indexPath.row
         let viewModelCell = viewModel.sections[indexPath.section].cellsViewModel[indexPath.row]
         guard let core = corePresentation else { return }
-        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row), and: viewModel.ownerID), animated: true, completion: nil)
+        self.navigationController?.pushViewController(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row), and: viewModel.ownerID), animated: true)
+//        self.present(core.postDetailViewController(with: viewModelCell, for: viewModel.getPostID(indexPath: indexPath.row), and: viewModel.ownerID), animated: true, completion: nil)
         
     }
 }

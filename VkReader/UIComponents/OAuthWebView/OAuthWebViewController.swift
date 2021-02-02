@@ -35,7 +35,7 @@ class OAuthWebViewController: BaseController {
         webView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        let url = URL(string: "https://oauth.vk.com/authorize?client_id=6439743&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=offlinel&response_type=token&v=5.126")!
+        let url = URL(string: "https://oauth.vk.com/authorize?client_id=6439743&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=offline,groups,wall&response_type=token&v=5.126")!
         webView.navigationDelegate = self
         webView.load(URLRequest(url: url))
     }

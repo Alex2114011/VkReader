@@ -31,6 +31,7 @@ class PostDetailViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getComment()
+        viewModel.nextComment()
         setupUI()
         swipes()
         goBackButton()
@@ -66,7 +67,8 @@ class PostDetailViewController: BaseController {
     }
     
     @objc func navigateToFeedVC(parameter: UIBarButtonItem) {
-        self.navigationController?.dismiss(animated: true, completion: nil) //Отклоняет контроллер, который был представлен контроллером представления модально.
+        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.dismiss(animated: true, completion: nil) //Отклоняет контроллер, который был представлен контроллером представления модально.
     }
     
     

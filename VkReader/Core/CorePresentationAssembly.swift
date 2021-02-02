@@ -32,8 +32,11 @@ class CorePresentationAssembly {
     func groupsViewController() -> UIViewController{
         let vm = GroupsViewModelImpl(groupService: coreAssembly.groupsService, accountService: coreAssembly.accountService, wallService: coreAssembly.wallService)
         let vc = GroupsViewController(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-        return vc
+        navigationController.isNavigationBarHidden = true
+//        navigationController.modalPresentationStyle = .fullScreen
+        return navigationController
     }
     /// Используем этот метод для создания VC
     /// В методе создается константа vm содержащая LoginViewModelImpl он нам нужен для того что только через этот класс работатьс моделью
@@ -55,20 +58,15 @@ class CorePresentationAssembly {
     func feedViewController(for ownerID: Int) -> UIViewController {
         let vm = FeedViewModelImpl(wallService: coreAssembly.wallService, commentService: coreAssembly.commentsService, for: ownerID)
         let vc = FeedViewController(viewModel: vm)
-        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-        navigationController.modalPresentationStyle = .fullScreen
-        return  navigationController
+        return vc
     }
     
     func postDetailViewController(with postModel: VKReaderViewModelCell, for postID: Int, and ownerId:Int) -> UIViewController {
         let vm = PostDetailViewModelImpl(commentService: coreAssembly.commentsService, postViewModel: postModel, postIdentifier: postID, and: ownerId)
-       
         let vc = PostDetailViewController(viewModel: vm)
-        let navigationController = UINavigationController(rootViewController: vc)
         vc.corePresentation = self
-        navigationController.modalPresentationStyle = .fullScreen
-        return  navigationController
+        return vc
     }
     /// Этот метод позволяет переназначить navigation controller указанный в AppDelegate на другой VC это нужно для первого входа после авторизации пользователя, 
     func swapWindowRoot(to viewController: UIViewController) {
